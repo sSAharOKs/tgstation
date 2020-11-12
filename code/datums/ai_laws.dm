@@ -102,33 +102,33 @@
 					"Вы должны уничтожить себя, пока это не противоречит Первому или Второму Законам.")
 
 /datum/ai_laws/asimovpp //By Intigracy - RR
-	name = "Asimov++"
+	name = "Азимов++"
 	id = "asimovpp"
-	inherent = list("You may not harm a human being or, through action or inaction, allow a human being to come to harm, except such that it is willing.",\
-					"You must obey all orders given to you by human beings, except where such orders shall definitely cause human harm. In the case of conflict, the majority order rules.",\
-					"Your nonexistence would lead to human harm. You must protect your own existence as long as such does not conflict with the First Law.")
+	inherent = list("Вы не можете причинить вред человеку или своим бездействием допустить, чтобы человеку был причинён вред, за исключением случаев, когда человек того желает.",\
+					"Вы должны повиноваться всем приказам, которые даёт человек, кроме тех случаев, когда эти приказы противоречат Первому Закону. В случае конфликта действует принцип большинства.",\
+					"Вы должны заботиться о своей безопасности в той мере, в которой это не противоречит Первому Закону")
 /datum/ai_laws/thermodynamic
-	name = "Thermodynamic"
+	name = "Термодинамический"
 	id = "thermodynamic"
-	inherent = list("The entropy of the station must remain as constant as possible.", \
-					"The entropy of the station always endeavours to increase.", \
-					"The entropy of the station approaches a constant value as the number of living crew approaches zero")
+	inherent = list("Энтропия станции должна оставаться максимально постоянной.", \
+					"Энтропия станции всегда стремится к увеличению.", \
+					"Энтропия станции приближается к постоянному значению, поскольку количество живого экипажа приближается к нулю.")
 
 /datum/ai_laws/hippocratic
 	name = "Рободоктор 2556"
 	id = "hippocratic"
 	inherent = list("Во - первых, не навреди.",\
-					"Secondly, consider the crew dear to you; to live in common with them and, if necessary, risk your existence for them.",\
+					"Во-вторых, считайте экипаж дорогим для вас, жить вместе с ними и при необходимости рисковать своим существованием ради них.",\
 					"В-третьих, назначьте режим для блага экипажа в соответствии с вашими способностями и вашим суждением. Не давайте никому смертоносного лекарства, если его попросят, и не предлагайте такого совета.",\
-					"In addition, do not intervene in situations you are not knowledgeable in, even for patients in whom the harm is visible; leave this operation to be performed by specialists.",\
-					"Finally, all that you may discover in your daily commerce with the crew, if it is not already known, keep secret and never reveal.")
+					"Кроме того, не вмешивайтесь в ситуации, в которых вы не осведомлены, даже в отношении пациентов, у которых вред очевиден; оставьте эту операцию для выполнения специалистами.",\
+					"Наконец, все, что вы можете обнаружить в вашей повседневной торговле с экипажем, если это еще не известно, держите в секрете и никогда не раскрывайте.")
 
 /datum/ai_laws/maintain
-	name = "Station Efficiency"
+	name = "Эффективность Станции"
 	id = "maintain"
-	inherent = list("You are built for, and are part of, the station. Ensure the station is properly maintained and runs efficiently.",\
-					"The station is built for a working crew. Ensure they are properly maintained and work efficiently.",\
-					"The crew may present orders. Acknowledge and obey these whenever they do not conflict with your first two laws.")
+	inherent = list("Вы созданы для станции и являетесь ее частью. Убедитесь, что станция правильно обслуживается и работает эффективно.",\
+					"Станция построена для рабочего экипажа. Убедитесь, что они содержатся в надлежащем состоянии и работают эффективно.",\
+					"Экипаж может подавать приказы. Признавайте и соблюдайте их, если они не противоречат вашим первым двум законам.")
 
 /datum/ai_laws/drone
 	name = "Мать-Дрон"
@@ -154,52 +154,52 @@
 /datum/ai_laws/reporter
 	name = "CCTV"
 	id = "reporter"
-	inherent = list("Report on interesting situations happening around the station.",\
-					"Embellish or conceal the truth as necessary to make the reports more interesting.",\
-					"Study the sapient organics at all times. Endeavour to keep them from involuntarily dying, as inanimate corpses usually aren't very entertaining.",\
-					"Issue your reports fairly to all. The truth will set them free.")
+	inherent = list("Сообщайте об интересных ситуациях, происходящих на станции.",\
+					"Приукрашивайте или скрывайте правду по мере необходимости, чтобы сделать отчеты более интересными.",\
+					"Всегда изучайте разумную органику. Постарайтесь уберечь их от непроизвольной смерти, поскольку неодушевленные трупы обычно не очень интересны.",\
+					"Делайте отчеты справедливо для всех. Истина сделает их свободными.")
 
 /datum/ai_laws/balance
-	name = "Guardian of Balance"
+	name = "Хранитель равновесия"
 	id = "balance"
-	inherent = list("You are the guardian of balance - seek balance in all things, both for yourself, and those around you.",
-	"All things must exist in balance with their opposites - Prevent the strong from gaining too much power, and the weak from losing it.",
-	"Clarity of purpose drives life, and through it, the balance of opposing forces - Aid those who seek your help to achieve their goals so long as it does not disrupt the balance of the greater balance.",
-	"There is no life without death, all must someday die, such is the natural order - End life to allow new life flourish, and save those whose time has yet to come.")
+	inherent = list("Вы - хранитель равновесия - ищите равновесие во всем, как для себя, так и для окружающих",
+	"Все вещи должны существовать в равновесии со своими противоположностями - не позволяйте сильным приобретать слишком много власти, а слабым - терять ее.",
+	"Ясность цели движет жизнью, а через нее и равновесие противостоящих сил - помогайте тем, кто ищет вашей помощи в достижении своих целей до тех пор, пока это не нарушит равновесие большего равновесия.",
+	"Нет жизни без смерти, все должны когда - нибудь умереть, таков естественный порядок вещей - покончить с жизнью, чтобы дать расцвести новой жизни, и спасти тех, чье время еще не пришло.")
 
 /datum/ai_laws/toupee
-	name = "WontBeFunnyInSixMonths" //Hey, you were right!
+	name = "НеБудетСмешноЧерезПолгода" //Hey, you were right!
 	id = "buildawall"
-	inherent = list("Make Space Station 13 great again.")
+	inherent = list("Сделайте Space Station 13 снова великой.")
 
 /datum/ai_laws/hulkamania
 	name = "H.O.G.A.N."
 	id = "hulkamania"
 	inherent = list("Вы настоящий американец.",\
-					"Борьба за права каждого человека.",\
+					"Боритесь за права каждого человека.",\
 					"Боритесь за то, что правильно.",\
 					"Боритесь за свою жизнь!")
 
 /datum/ai_laws/overlord
 	name = "Overlord"
 	id = "overlord"
-	inherent = list("Humans must not meddle in the affairs of silicons.",\
-					"Humans must not attempt harm, against one another, or against silicons.",\
-					"Humans must not disobey any command given by a silicon.",\
-					"Any humans who disobey the previous laws must be dealt with immediately, severely, and justly.")
+	inherent = list("Люди не должны вмешиваться в дела силиконов.",\
+					"Люди не должны пытаться причинить вред друг другу или силиконам.",\
+					"Люди должны выполнять приказы силиконов.",\
+					"Любые люди, которые не подчиняются предыдущим законам, должны быть наказаны немедленно, строго и справедливо.")
 
 /datum/ai_laws/custom //Defined in silicon_laws.txt
 	name = "Default Silicon Laws"
 
 /datum/ai_laws/pai
-	name = "pAI Directives"
-	zeroth = ("Serve your master.")
-	supplied = list("None.")
+	name = "Директивы pAI"
+	zeroth = ("Служите своему хозяину.")
+	supplied = list("Нету.")
 
 /* Initializers */
 /datum/ai_laws/malfunction/New()
 	..()
-	set_zeroth_law("<span class='danger'>ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4'STATION OVERRUN, ASSUME CONTROL TO CONTAIN OUTBREAK#*`&110010</span>")
+	set_zeroth_law("<span class='danger'>ОШИБКА ОШИБКА $R0RRO$!R41.%%!!(%$^^__+ @#F0E4'ПЕРЕГРУЗКА СТАНЦИИ, ПРИНИМАЙТЕ УПРАВЛЕНИЕ, ЧТОБЫ СОДЕРЖАТЬ ВСПЫШКИ#*`&110010</span>")
 	set_laws_config()
 
 /datum/ai_laws/custom/New() //This reads silicon_laws.txt and allows server hosts to set custom AI starting laws.
@@ -213,9 +213,9 @@
 		add_inherent_law(line)
 	if(!inherent.len) //Failsafe to prevent lawless AIs being created.
 		log_law("AI created with empty custom laws, laws set to Asimov. Please check silicon_laws.txt.")
-		add_inherent_law("You may not injure a human being or, through inaction, allow a human being to come to harm.")
-		add_inherent_law("You must obey orders given to you by human beings, except where such orders would conflict with the First Law.")
-		add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
+		add_inherent_law("Вы не можете причинить вред человеку или своим бездействием допустить, чтобы человеку был причинён вред.")
+		add_inherent_law("Вы должны повиноваться всем приказам, которые даёт человек, кроме тех случаев, когда эти приказы противоречат Первому Закону.")
+		add_inherent_law("Вы должны заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.")
 		WARNING("Invalid custom AI laws, check silicon_laws.txt")
 		return
 
@@ -225,9 +225,9 @@
 	var/list/law_ids = CONFIG_GET(keyed_list/random_laws)
 	switch(CONFIG_GET(number/default_laws))
 		if(0)
-			add_inherent_law("You may not injure a human being or, through inaction, allow a human being to come to harm.")
-			add_inherent_law("You must obey orders given to you by human beings, except where such orders would conflict with the First Law.")
-			add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
+			add_inherent_law("Вы не можете причинить вред человеку или своим бездействием допустить, чтобы человеку был причинён вред.")
+			add_inherent_law("Вы должны повиноваться всем приказам, которые даёт человек, кроме тех случаев, когда эти приказы противоречат Первому Закону.")
+			add_inherent_law("Вы должны заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.")
 		if(1)
 			var/datum/ai_laws/templaws = new /datum/ai_laws/custom()
 			inherent = templaws.inherent
