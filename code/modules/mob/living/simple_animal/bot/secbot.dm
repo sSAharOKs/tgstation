@@ -42,6 +42,10 @@
 	var/weapon_force = 20 // Only used for NAP violation beatdowns on non-grievous securitrons
 	var/market_verb = "Suspect"
 	var/payment_department = ACCOUNT_SEC
+	var/confusion_amt = 10
+	var/stamina_loss_amt = 80 //WHY ISN'T STUNBATON NUMBERS? JUST BECAUSE BEEPSKY MORE ANGRY THAN HUMANZ!
+	var/apply_stun_delay = 2 SECONDS
+	var/stun_time = 6 SECONDS
 
 /mob/living/simple_animal/bot/secbot/beepsky
 	name = "Commander Beep O'sky"
@@ -289,13 +293,16 @@ Auto Patrol: []"},
 	if(harm)
 		weapon.attack(C, src)
 	if(ishuman(C))
-		C.stuttering = 5
-		C.Paralyze(100)
-		var/mob/living/carbon/human/H = C
-		threat = H.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
+		C.Jitter(20)
+		C.set_confusion(max(confusion_amt, C.get_confusion()))
+		C.stuttering = max(8, C.stuttering)
+		C.apply_damage(stamina_loss_amt, STAMINA, BODY_ZONE_CHEST)
+		threat = C.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
 	else
-		C.Paralyze(100)
-		C.stuttering = 5
+		C.Jitter(20)
+		C.set_confusion(max(confusion_amt, C.get_confusion()))
+		C.stuttering = max(8, C.stuttering)
+		C.apply_damage(stamina_loss_amt, STAMINA, BODY_ZONE_CHEST)
 		threat = C.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
 
 	log_combat(src,C,"stunned")
@@ -351,7 +358,7 @@ Auto Patrol: []"},
 		if(BOT_PREP_ARREST)		// preparing to arrest target
 
 			// see if he got away. If he's no no longer adjacent or inside a closet or about to get up, we hunt again.
-			if( !Adjacent(target) || !isturf(target.loc) ||  target.AmountParalyzed() < 40)
+			if( !Adjacent(target) || !isturf(target.loc))
 				back_to_hunt()
 				return
 
@@ -381,7 +388,7 @@ Auto Patrol: []"},
 				back_to_idle()
 				return
 
-			if(!Adjacent(target) || !isturf(target.loc) || (target.loc != target_lastloc && target.AmountParalyzed() < 40)) //if he's changed loc and about to get up or not adjacent or got into a closet, we prep arrest again.
+			if(!Adjacent(target) || !isturf(target.loc)) //if he's changed loc and about to get up or not adjacent or got into a closet, we prep arrest again.
 				back_to_hunt()
 				return
 			else //Try arresting again if the target escapes.

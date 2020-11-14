@@ -1330,8 +1330,8 @@
 /atom/proc/log_message(message, message_type, color=null, log_globally=TRUE)
 	if(!log_globally)
 		return
-
-	var/log_text = "[key_name(src)] [message] [loc_name(src)]"
+	var/log_text = "<head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'></head>"
+	log_text += "[key_name(src)] [message] [loc_name(src)]"
 	switch(message_type)
 		if(LOG_ATTACK)
 			log_attack(log_text)
@@ -1355,6 +1355,8 @@
 			log_econ(log_text)
 		if(LOG_OOC)
 			log_ooc(log_text)
+		if(LOG_LOOC)
+			log_looc(log_text)
 		if(LOG_ADMIN)
 			log_admin(log_text)
 		if(LOG_ADMIN_PRIVATE)
