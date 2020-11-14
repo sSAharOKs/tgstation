@@ -191,7 +191,8 @@
 		if("list_signalers")
 			if(!check_rights(R_ADMIN))
 				return
-			var/dat = "<B>Showing last [length(GLOB.lastsignalers)] signalers.</B><HR>"
+			var/dat = "<head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'></head>"
+			dat += = "<B>Showing last [length(GLOB.lastsignalers)] signalers.</B><HR>"
 			for(var/sig in GLOB.lastsignalers)
 				dat += "[sig]<BR>"
 			usr << browse(dat, "window=lastsignalers;size=800x500")
@@ -199,7 +200,8 @@
 		if("list_lawchanges")
 			if(!check_rights(R_ADMIN))
 				return
-			var/dat = "<B>Showing last [length(GLOB.lawchanges)] law changes.</B><HR>"
+			var/dat = "<head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'></head>"
+			dat += "<B>Showing last [length(GLOB.lawchanges)] law changes.</B><HR>"
 			for(var/sig in GLOB.lawchanges)
 				dat += "[sig]<BR>"
 			usr << browse(dat, "window=lawchanges;size=800x500")
