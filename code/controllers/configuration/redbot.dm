@@ -19,7 +19,7 @@ SUBSYSTEM_DEF(redbot)
 	if(!config || !bot_ip)
 		return
 	if(priority_type && !.)
-		send_discord_message(channel, "@here - Новый [priority_type] requires/might need attention, but there are no admins online.") //Backup message should redbot be unavailable
+		send_discord_message(channel, "@here - Новый [priority_type] требует/может потребовать внимания, но в сети нет администраторов.") //Backup message should redbot be unavailable
 	var/list/data = list()
 	data["key"] = CONFIG_GET(string/comms_key)
 	data["announce_channel"] = channel

@@ -86,6 +86,9 @@
 /datum/config_entry/flag/log_adminchat	// log admin chat messages
 	protection = CONFIG_ENTRY_LOCKED
 
+/datum/config_entry/string/medal_hub_password
+	protection = CONFIG_ENTRY_HIDDEN
+
 /datum/config_entry/flag/log_pda	// log pda messages
 
 /datum/config_entry/flag/log_telecomms	// log telecomms messages

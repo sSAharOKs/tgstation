@@ -204,6 +204,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if(is_bwoink)
 		AddInteraction("<font color='blue'>[key_name_admin(usr)] PM'd [LinkedReplyName()]</font>")
 		message_admins("<font color='blue'>Ticket [TicketHref("#[id]")] created</font>")
+		SSredbot.send_discord_message("admin", "Тикет #[id] создан [usr.ckey] ([usr.real_name]): [name]", "ticket")
 	else
 		MessageNoRecipient(msg)
 
