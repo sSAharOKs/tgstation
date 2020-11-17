@@ -81,6 +81,8 @@
 
 /datum/config_entry/flag/log_econ	// log economy actions
 
+/datum/config_entry/string/bot_ip
+
 /datum/config_entry/flag/log_adminchat	// log admin chat messages
 	protection = CONFIG_ENTRY_LOCKED
 
