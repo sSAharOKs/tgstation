@@ -216,7 +216,8 @@
 		to_chat(usr, "Error: you are not an admin!", confidential = TRUE)
 		return
 	var/dat
-	dat = text("<HEAD><TITLE>Admin Newscaster</TITLE></HEAD><H3>Admin Newscaster Unit</H3>")
+	dat = "<head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'></head>"
+	dat += text("<HEAD><TITLE>Admin Newscaster</TITLE></HEAD><H3>Admin Newscaster Unit</H3>")
 
 	switch(admincaster_screen)
 		if(0)
