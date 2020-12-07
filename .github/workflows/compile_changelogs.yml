@@ -27,6 +27,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install pyyaml
+          python -m pip install BeautifulSoup4
           sudo apt-get install  dos2unix
       - name: "Checkout"
         if: steps.value_holder.outputs.CL_ENABLED
