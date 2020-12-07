@@ -279,6 +279,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 		scan_user(human_or_robot_user)
 		switch(screen)
 			if(0)
+				dat += "<head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'></head>"
 				dat += "Welcome to Newscasting Unit #[unit_no].<BR> Interface & News networks Operational."
 				dat += "<BR><FONT SIZE=1>Property of Nanotrasen Inc</FONT>"
 				if(GLOB.news_network.wanted_issue.active)
@@ -900,6 +901,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 		pages = 0
 		switch(screen)
 			if(0) //Cover
+				dat += "<head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'></head>"
 				dat+="<DIV ALIGN='center'><B><FONT SIZE=6>The Griffon</FONT></B></div>"
 				dat+="<DIV ALIGN='center'><FONT SIZE=2>Nanotrasen-standard newspaper, for use on Nanotrasen? Space Facilities</FONT></div><HR>"
 				if(!length(news_content))
