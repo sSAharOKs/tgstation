@@ -42,7 +42,6 @@
 	ranged = TRUE
 	pixel_x = -32
 	base_pixel_x = -32
-	floating_anim_status = NEVER_FLOATING_ANIM //we don't want this guy to float, messes up his animations
 	del_on_death = TRUE
 	gps_name = "Angelic Signal"
 	achievement_type = /datum/award/achievement/boss/colossus_kill
@@ -250,6 +249,14 @@
 		var/random_y = rand(0, 72)
 		AT.pixel_y += random_y
 	return ..()
+
+/mob/living/simple_animal/hostile/megafauna/colossus/float(on) //we don't want this guy to float, messes up his animations
+	if(throwing)
+		return
+	if(on && !(movement_type & FLOATING))
+		setMovetype(movement_type | FLOATING)
+	else if(!on && (movement_type & FLOATING))
+		setMovetype(movement_type & ~FLOATING)
 
 /obj/projectile/colossus
 	name ="death bolt"
@@ -609,13 +616,9 @@
 	activation_sound = 'sound/effects/ghost2.ogg'
 	var/ready_to_deploy = FALSE
 
-/obj/machinery/anomalous_crystal/helpers/Destroy()
-	GLOB.poi_list -= src
-	. = ..()
-
 /obj/machinery/anomalous_crystal/helpers/ActivationReaction(mob/user, method)
 	if(..() && !ready_to_deploy)
-		GLOB.poi_list |= src
+		AddElement(/datum/element/point_of_interest)
 		ready_to_deploy = TRUE
 		notify_ghosts("An anomalous crystal has been activated in [get_area(src)]! This crystal can always be used by ghosts hereafter.", enter_link = "<a href=?src=[REF(src)];ghostjoin=1>(Click to enter)</a>", ghost_sound = 'sound/effects/ghost2.ogg', source = src, action = NOTIFY_ATTACK, header = "Anomalous crystal activated")
 
