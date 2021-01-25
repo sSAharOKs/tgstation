@@ -51,6 +51,40 @@
 		
 		-->
 		<div class="commit sansserif">
+			<h2 class="date">25 January 2021</h2>
+			<h3 class="author">Maurukas updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">Icebox turf generation no longer breaches the labor camp and mining base</li>
+				<li class="bugfix">Fixes all roundstart active turfs and genturf errors on Icebox</li>
+				<li class="bugfix">All APCs on Icebox are now located within the areas they power, not in maint</li>
+				<li class="bugfix">Removes duplicated APCs on Icebox</li>
+				<li class="bugfix">Fixes Icebox's power grid, in general</li>
+			</ul>
+			<h3 class="author">Nari Harimoto updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">fixed an access issue with a table in meta toxins</li>
+			</ul>
+			<h3 class="author">Qustinnus updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="refactor">climbing is now done through an element</li>
+			</ul>
+			<h3 class="author">RaveRadbury updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">If you're a Clown/Mime fan and you become obsessed, you'll have them as your target. Also works for Spiritual with the Chaplain.</li>
+			</ul>
+			<h3 class="author">cacogen updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Soapstone messages at or below -5 voting score won't persist. This is to reduce the amount and increase the overall quality. If this changelog wasn't here last round you may be able to save one</li>
+			</ul>
+			<h3 class="author">dragomagol updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">The Medieval Shuttle's brig now has a brig area instead of its usual area for escape checking</li>
+			</ul>
+			<h3 class="author">esainane updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">If you manage to start fusion in the HFR without starting the cooling process, you can now start cooling and interact with the process as usual, rather than being softlocked. You still aren't able to disable cooling once fusion has started.</li>
+			</ul>
+
 			<h2 class="date">24 January 2021</h2>
 			<h3 class="author">ArcaneMusic updated:</h3>
 			<ul class="changes bgimages16">
@@ -59,6 +93,14 @@
 			<h3 class="author">LemonInTheDark updated:</h3>
 			<ul class="changes bgimages16">
 				<li class="bugfix">Fixes an edgecase where groups of gas could settle while on fire</li>
+			</ul>
+			<h3 class="author">Tralezab, Nabski and Coaix helping in name string additions updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Added the Wizard Academy anonymous theme</li>
+				<li class="rscadd">Wizard event requested by actionninja to enable the wizard anonymous theme as a summon events... event.</li>
+				<li class="refactor">Themes are no longer switch cases and strings, they are now datum singletons. I really should have done this before</li>
+				<li class="rscadd">Anon names can be ran post roundstart with options to announce or not</li>
+				<li class="bugfix">Anon names won't fuck with your preferences anymore, only loading from it instead of saving to it.</li>
 			</ul>
 			<h3 class="author">coiax updated:</h3>
 			<ul class="changes bgimages16">
@@ -1160,6 +1202,7 @@
 			<h3 class="author">zxaber updated:</h3>
 			<ul class="changes bgimages16">
 				<li class="balance">Cyborgs synced to a Malf AI that activates Doomsday will now have their lamps forced to a red color and enabled to at least light level one. Stealth is no longer an option. Lamp options return to normal upon Doomsday deactivation, no matter the reason, or if the borg somehow loses sync with the AI.</li>
+				<li class="bugfix">Cell chargers will no longer powersink the room they're in, as they now draw all the power for the cell from the powernet directly through the APC. They still require a trickle of power on the equipment breaker, though.</li>
 			</ul>
 		</div>
 
