@@ -69,14 +69,8 @@
 				tm.timestamp = entry[DMAPI5_REVISION_INFORMATION_TIMESTAMP]
 			else
 				TGS_WARNING_LOG("Failed to decode [DMAPI5_TEST_MERGE_REVISION] from test merge #[tm.number]!")
-
-<<<<<<< HEAD
-			tm.timestamp = entry[DMAPI5_TEST_MERGE_TIME_MERGED]
-=======
 			if(!tm.timestamp)
 				tm.timestamp = entry[DMAPI5_TEST_MERGE_TIME_MERGED]
-
->>>>>>> 4839c20b823e6111fff2909bad93155b96d04699
 			tm.title = entry[DMAPI5_TEST_MERGE_TITLE_AT_MERGE]
 			tm.body = entry[DMAPI5_TEST_MERGE_BODY_AT_MERGE]
 			tm.url = entry[DMAPI5_TEST_MERGE_URL]
