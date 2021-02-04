@@ -272,6 +272,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 
 	AddInteraction("<font color='red'>[LinkedReplyName(ref_src)]: [msg]</font>")
 	log_admin_private("Ticket #[id]: [key_name(initiator)]: [msg]")
+	SSredbot.send_discord_message("admin", "Тикет #[id] создан [usr.ckey] ([usr.real_name]): [name]", "ticket")
 
 	//send this msg to all admins
 	for(var/client/X in GLOB.admins)
@@ -316,6 +317,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 
 	AddInteraction("<font color='purple'>Reopened by [key_name_admin(usr)]</font>")
 	var/msg = "<span class='adminhelp'>Ticket [TicketHref("#[id]")] reopened by [key_name_admin(usr)].</span>"
+	SSredbot.send_discord_message("admin", "Тикет #[id] открыт заново администратором [key_name]", "ticket")
 	message_admins(msg)
 	log_admin_private(msg)
 	SSblackbox.LogAhelp(id, "Reopened", "Reopened by [usr.key]", usr.ckey)
@@ -343,6 +345,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if(!silent)
 		SSblackbox.record_feedback("tally", "ahelp_stats", 1, "closed")
 		var/msg = "Ticket [TicketHref("#[id]")] closed by [key_name]."
+		SSredbot.send_discord_message("admin", "Тикет #[id] закрыт администратором [key_name]", "ticket")
 		message_admins(msg)
 		SSblackbox.LogAhelp(id, "Closed", "Closed by [usr.key]", null, usr.ckey)
 		log_admin_private(msg)
@@ -362,6 +365,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if(!silent)
 		SSblackbox.record_feedback("tally", "ahelp_stats", 1, "resolved")
 		var/msg = "Ticket [TicketHref("#[id]")] resolved by [key_name]"
+		SSredbot.send_discord_message("admin", "Тикет #[id] закрыт администратором [key_name]", "ticket")
 		message_admins(msg)
 		SSblackbox.LogAhelp(id, "Resolved", "Resolved by [usr.key]", null, usr.ckey)
 		log_admin_private(msg)
@@ -382,6 +386,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 
 	SSblackbox.record_feedback("tally", "ahelp_stats", 1, "rejected")
 	var/msg = "Ticket [TicketHref("#[id]")] rejected by [key_name]"
+	SSredbot.send_discord_message("admin", "Тикет #[id] отклонен администратором [key_name]", "ticket")
 	message_admins(msg)
 	log_admin_private(msg)
 	AddInteraction("Rejected by [key_name].")
