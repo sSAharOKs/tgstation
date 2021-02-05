@@ -200,12 +200,9 @@
 
 /datum/config_entry/flag/ooc_during_round
 
-<<<<<<< HEAD
 /datum/config_entry/flag/looc_during_round
 
-=======
 // deprecated for unclear name
->>>>>>> 9245c544c0e277d1413cdd129666c3baf1c9dfd3
 /datum/config_entry/number/commendations
 	integer = FALSE
 	deprecated_by = /datum/config_entry/number/commendation_percent_poll
