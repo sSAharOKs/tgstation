@@ -317,7 +317,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 
 	AddInteraction("<font color='purple'>Reopened by [key_name_admin(usr)]</font>")
 	var/msg = "<span class='adminhelp'>Ticket [TicketHref("#[id]")] reopened by [key_name_admin(usr)].</span>"
-	SSredbot.send_discord_message("admin", "Тикет #[id] открыт заново администратором [key_name_admin(usr)]", "ticket")
+	SSredbot.send_discord_message("admin", "Тикет #[id] открыт заново администратором [usr.key]", "ticket")
 	message_admins(msg)
 	log_admin_private(msg)
 	SSblackbox.LogAhelp(id, "Reopened", "Reopened by [usr.key]", usr.ckey)
