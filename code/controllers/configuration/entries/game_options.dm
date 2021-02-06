@@ -202,7 +202,12 @@
 
 /datum/config_entry/flag/looc_during_round
 
+// deprecated for unclear name
 /datum/config_entry/number/commendations
+	integer = FALSE
+	deprecated_by = /datum/config_entry/number/commendation_percent_poll
+
+/datum/config_entry/number/commendation_percent_poll
 	integer = FALSE
 
 /datum/config_entry/flag/emojis
