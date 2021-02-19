@@ -2,25 +2,25 @@
 	"generic": ["general disfigurement"],
 
 	"bluntmoderate": [
-		"the bone equivalent of a faded bruise",
-		"a series of tiny chip marks"
+		"костный эквивалент поблекшего синяка",
+		"серия крошечных следов"
 	],
 
 	"bluntsevere": [
-		"a series of faded hairline cracks",
-		"a small bone dent"
+		"серия поблекших микротрещин",
+		"небольшая костная вмятина"
 	],
 
 	"bluntcritical": [
-		"large streaks of refilled cracks",
-		"a fractal of reformed stress marks",
-		"a cluster of calluses"
+		"большие залитые трещинами полосы",
+		"фрактал реформированных следов напряжений",
+		"скопление мозолей"
 	],
 
 	"dismember": [
-		"is slightly misaligned",
-		"has clearly been dropped recently",
-		"has a damaged socket"
+		"слегка смещен",
+		"явно упал недавно",
+		"поврежден сокет"
 	]
 
 }
