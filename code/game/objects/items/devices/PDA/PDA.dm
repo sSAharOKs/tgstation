@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 #define PDA_SPAM_DELAY     2 MINUTES
 
 /obj/item/pda
-	name = "\improper PDA"
+	name = "\improper standard PDA"
 	desc = "A portable microcomputer by Thinktronic Systems, LTD. Functionality determined by a preprogrammed ROM cartridge."
 	icon = 'icons/obj/pda.dmi'
 	icon_state = "pda"
@@ -488,8 +488,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 				id_check(U)
 			if("UpdateInfo")
 				ownjob = id.assignment
-				if(istype(id, /obj/item/card/id/syndicate))
-					owner = id.registered_name
 				update_label()
 				if(!silent)
 					playsound(src, 'sound/machines/terminal_processing.ogg', 15, TRUE)
