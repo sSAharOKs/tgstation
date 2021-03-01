@@ -66,6 +66,10 @@
 	name = "retro identification card"
 	desc = "A card used to provide ID and determine access across the station."
 	icon_state = "card_grey"
+<<<<<<< HEAD
+=======
+	worn_icon_state = "card_retro"
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 	inhand_icon_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
@@ -115,6 +119,17 @@
 		my_store.my_card = null
 	return ..()
 
+<<<<<<< HEAD
+=======
+/obj/item/card/id/get_id_examine_strings(mob/user)
+	. = ..()
+	. += list("[icon2html(get_icon_source(), user, extra_classes = "bigicon")]")
+
+/// Simple helper proc. Returns the source of the icon for this card. Advanced cards can override this to return their icon that has been cached due to using overlays.
+/obj/item/card/id/proc/get_icon_source()
+	return src
+
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 /**
  * Helper proc, checks whether the ID card can hold any given set of wildcards.
  *
@@ -588,6 +603,7 @@
 /obj/item/card/id/proc/update_label()
 	var/blank = !registered_name
 	name = "[blank ? initial(name) : "[registered_name]'s ID Card"][(!assignment) ? "" : " ([assignment])"]"
+<<<<<<< HEAD
 
 /obj/item/card/id/away
 	name = "\proper a perfectly generic identification card"
@@ -651,6 +667,71 @@
 		desc = "Provides access to the [department_name]."
 	SSeconomy.dep_cards += src
 
+=======
+
+/obj/item/card/id/away
+	name = "\proper a perfectly generic identification card"
+	desc = "A perfectly generic identification card. Looks like it could use some flavor."
+	trim = /datum/id_trim/away
+	icon_state = "retro"
+	registered_age = null
+
+/obj/item/card/id/away/hotel
+	name = "Staff ID"
+	desc = "A staff ID used to access the hotel's doors."
+	trim = /datum/id_trim/away/hotel
+
+/obj/item/card/id/away/hotel/securty
+	name = "Officer ID"
+	trim = /datum/id_trim/away/hotel/security
+
+/obj/item/card/id/away/old
+	name = "\proper a perfectly generic identification card"
+	desc = "A perfectly generic identification card. Looks like it could use some flavor."
+
+/obj/item/card/id/away/old/sec
+	name = "Charlie Station Security Officer's ID card"
+	desc = "A faded Charlie Station ID card. You can make out the rank \"Security Officer\"."
+	trim = /datum/id_trim/away/old/sec
+
+/obj/item/card/id/away/old/sci
+	name = "Charlie Station Scientist's ID card"
+	desc = "A faded Charlie Station ID card. You can make out the rank \"Scientist\"."
+	trim = /datum/id_trim/away/old/sci
+
+/obj/item/card/id/away/old/eng
+	name = "Charlie Station Engineer's ID card"
+	desc = "A faded Charlie Station ID card. You can make out the rank \"Station Engineer\"."
+	trim = /datum/id_trim/away/old/eng
+
+/obj/item/card/id/away/old/apc
+	name = "APC Access ID"
+	desc = "A special ID card that allows access to APC terminals."
+	trim = /datum/id_trim/away/old/apc
+
+/obj/item/card/id/away/deep_storage //deepstorage.dmm space ruin
+	name = "bunker access ID"
+
+/obj/item/card/id/departmental_budget
+	name = "departmental card (ERROR)"
+	desc = "Provides access to the departmental budget."
+	icon_state = "budgetcard"
+	var/department_ID = ACCOUNT_CIV
+	var/department_name = ACCOUNT_CIV_NAME
+	registered_age = null
+
+/obj/item/card/id/departmental_budget/Initialize()
+	. = ..()
+	var/datum/bank_account/B = SSeconomy.get_dep_account(department_ID)
+	if(B)
+		registered_account = B
+		if(!B.bank_cards.Find(src))
+			B.bank_cards += src
+		name = "departmental card ([department_name])"
+		desc = "Provides access to the [department_name]."
+	SSeconomy.dep_cards += src
+
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 /obj/item/card/id/departmental_budget/Destroy()
 	SSeconomy.dep_cards -= src
 	return ..()
@@ -670,6 +751,10 @@
 	name = "identification card"
 	desc = "A card used to provide ID and determine access across the station. Has an integrated digital display and advanced microchips."
 	icon_state = "card_grey"
+<<<<<<< HEAD
+=======
+	worn_icon_state = "card_grey"
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 
 	wildcard_slots = WILDCARD_LIMIT_GREY
 
@@ -677,12 +762,24 @@
 	var/assigned_icon_state = "assigned"
 	/// Cached icon that has been built for this card.
 	var/icon/cached_flat_icon
+<<<<<<< HEAD
 
 	/// If this is set, will manually override the icon file for the trim. Intended for admins to VV edit and chameleon ID cards.
 	var/trim_icon_override
 	/// If this is set, will manually override the icon state for the trim. Intended for admins to VV edit and chameleon ID cards.
 	var/trim_state_override
 
+=======
+
+	/// If this is set, will manually override the icon file for the trim. Intended for admins to VV edit and chameleon ID cards.
+	var/trim_icon_override
+	/// If this is set, will manually override the icon state for the trim. Intended for admins to VV edit and chameleon ID cards.
+	var/trim_state_override
+
+/obj/item/card/id/advanced/get_icon_source()
+	return get_cached_flat_icon()
+
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 /// If no cached_flat_icon exists, this proc creates it. This proc then returns the cached_flat_icon.
 /obj/item/card/id/advanced/proc/get_cached_flat_icon()
 	if(!cached_flat_icon)
@@ -712,6 +809,10 @@
 	name = "silver identification card"
 	desc = "A silver card which shows honour and dedication."
 	icon_state = "card_silver"
+<<<<<<< HEAD
+=======
+	worn_icon_state = "card_silver"
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 	inhand_icon_state = "silver_id"
 	wildcard_slots = WILDCARD_LIMIT_SILVER
 
@@ -729,6 +830,10 @@
 	name = "gold identification card"
 	desc = "A golden card which shows power and might."
 	icon_state = "card_gold"
+<<<<<<< HEAD
+=======
+	worn_icon_state = "card_gold"
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 	inhand_icon_state = "gold_id"
 	wildcard_slots = WILDCARD_LIMIT_GOLD
 
@@ -750,6 +855,10 @@
 	name = "\improper CentCom ID"
 	desc = "An ID straight from Central Command."
 	icon_state = "card_centcom"
+<<<<<<< HEAD
+=======
+	worn_icon_state = "card_centcom"
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 	assigned_icon_state = "assigned_centcom"
 	registered_name = "Central Command"
 	registered_age = null
@@ -795,6 +904,10 @@
 	name = "black identification card"
 	desc = "This card is telling you one thing and one thing alone. The person holding this card is an utter badass."
 	icon_state = "card_black"
+<<<<<<< HEAD
+=======
+	worn_icon_state = "card_black"
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 	assigned_icon_state = "assigned_syndicate"
 	wildcard_slots = WILDCARD_LIMIT_GOLD
 
@@ -809,7 +922,10 @@
 	name = "syndicate ID card"
 	desc = "An ID straight from the Syndicate."
 	registered_name = "Syndicate"
+<<<<<<< HEAD
 	icon_state = "card_black"
+=======
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 	registered_age = null
 	trim = /datum/id_trim/syndicom
 	wildcard_slots = WILDCARD_LIMIT_SYNDICATE
@@ -830,6 +946,10 @@
 	name = "\improper Debug ID"
 	desc = "A debug ID card. Has ALL the all access, you really shouldn't have this."
 	icon_state = "card_centcom"
+<<<<<<< HEAD
+=======
+	worn_icon_state = "card_centcom"
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 	assigned_icon_state = "assigned_centcom"
 	trim = /datum/id_trim/admin
 	wildcard_slots = WILDCARD_LIMIT_ADMIN
@@ -842,15 +962,25 @@
 	name = "prisoner ID card"
 	desc = "You are a number, you are not a free man."
 	icon_state = "card_prisoner"
+<<<<<<< HEAD
+=======
+	worn_icon_state = "card_prisoner"
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 	inhand_icon_state = "orange-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	registered_name = "Scum"
 	registered_age = null
 	trim = /datum/id_trim/job/prisoner
+<<<<<<< HEAD
 
 	wildcard_slots = WILDCARD_LIMIT_PRISONER
 
+=======
+
+	wildcard_slots = WILDCARD_LIMIT_PRISONER
+
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 	/// Number of gulag points required to earn freedom.
 	var/goal = 0
 	/// Number of gulag points earned.
@@ -903,6 +1033,10 @@
 	registered_name = "Highlander"
 	desc = "There can be only one!"
 	icon_state = "card_black"
+<<<<<<< HEAD
+=======
+	worn_icon_state = "card_black"
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 	assigned_icon_state = "assigned_syndicate"
 	trim = /datum/id_trim/highlander
 	wildcard_slots = WILDCARD_LIMIT_ADMIN
@@ -1107,6 +1241,10 @@
 /// A special variant of the classic chameleon ID card which accepts all access.
 /obj/item/card/id/advanced/chameleon/black
 	icon_state = "card_black"
+<<<<<<< HEAD
+=======
+	worn_icon_state = "card_black"
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 	assigned_icon_state = "assigned_syndicate"
 	wildcard_slots = WILDCARD_LIMIT_GOLD
 

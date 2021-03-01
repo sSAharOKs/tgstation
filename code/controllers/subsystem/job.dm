@@ -760,7 +760,12 @@ SUBSYSTEM_DEF(job)
 		"Research Director", "Scientist", "Roboticist", "Head of Security", "Warden", "Detective", "Security Officer", "Prisoner")
 
 	additional_jobs_with_icons = list("Emergency Response Team Commander", "Security Response Officer", "Engineering Response Officer", "Medical Response Officer", \
+<<<<<<< HEAD
 		"Entertainment Response Officer", "Religious Response Officer", "Janitorial Response Officer", "Death Commando")
+=======
+		"Entertainment Response Officer", "Religious Response Officer", "Janitorial Response Officer", "Death Commando", "Security Officer (Engineering)", \
+		"Security Officer (Cargo)", "Security Officer (Medical)", "Security Officer (Science)")
+>>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 
 	centcom_jobs = list("Central Command","VIP Guest","Custodian","Thunderdome Overseer","CentCom Official","Medical Officer","Research Officer", \
 		"Special Ops Officer","Admiral","CentCom Commander","CentCom Bartender","Private Security Force")
