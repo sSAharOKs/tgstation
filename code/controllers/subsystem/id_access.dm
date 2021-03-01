@@ -437,8 +437,6 @@ SUBSYSTEM_DEF(id_access)
 
 	id_card.add_access(trim.access, mode = TRY_ADD_ALL_NO_WILDCARD)
 	id_card.add_wildcards(trim.wildcard_access, mode = TRY_ADD_ALL)
-<<<<<<< HEAD
-=======
 
 /**
  * Tallies up all accesses the card has that have flags greater than or equal to the access_flag supplied.
@@ -457,4 +455,3 @@ SUBSYSTEM_DEF(id_access)
 			tally++
 
 	return tally
->>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b

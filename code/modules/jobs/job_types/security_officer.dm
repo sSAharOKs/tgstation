@@ -80,10 +80,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	if(dep_trim)
 		var/obj/item/card/id/worn_id = H.wear_id
 		SSid_access.apply_trim_to_card(worn_id, dep_trim)
-<<<<<<< HEAD
-=======
 		H.sec_hud_set_ID()
->>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 
 	var/teleport = 0
 	if(!CONFIG_GET(flag/sec_start_brig))

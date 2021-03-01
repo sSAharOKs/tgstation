@@ -77,14 +77,6 @@
 		front_id = (locate(/obj/item/card/id) in contents)
 
 	if(ishuman(loc))
-<<<<<<< HEAD
-		var/mob/living/carbon/human/H = loc
-		if(H.wear_id == src)
-			H.sec_hud_set_ID()
-
-	update_label()
-	update_appearance(UPDATE_ICON)
-=======
 		var/mob/living/carbon/human/wearing_human = loc
 		if(wearing_human.wear_id == src)
 			wearing_human.sec_hud_set_ID()
@@ -92,7 +84,6 @@
 	update_label()
 	update_appearance(UPDATE_ICON)
 	update_slot_icon()
->>>>>>> e12bfa6e813c63ba384c7320301426df6ec86f0b
 
 /obj/item/storage/wallet/Entered(atom/movable/AM)
 	. = ..()
