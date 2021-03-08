@@ -138,7 +138,7 @@
 
 
 	found_seat_lines = list("¿Como te va, space station 13?", "Кто готов к вечеринке!", "Ah, muchas gracias.", "Ааа, пахнет кулинарией mi abuela!")
-	cant_find_seat_lines = list("¿En Serio? Серьезно, мест нет?", "Andele! Я хочу стол, чтобы смотреть футбольный матч!", "Ay Caramba...")
+	cant_find_seat_lines = list("¿En Serio? Серьезно, мест нет?", "Andele! Я хочу сесть за стол, чтобы смотреть футбольный матч!", "Ay Caramba...")
 	leave_mad_lines = list("Aye dios mio, Я ухожу отсюда", "Esto es ridículo! Я ухожу", "Я видел, как готовят лучше в тако кампана!", "Я думал, это ресторан, pero es porquería!")
 	leave_happy_lines = list("Amigo, era delicio. Спасибо!", "Yo tuve el mono, а твой друг? Вы попали в точку.", "Как раз нужное количество острого!")
 	wait_for_food_lines = list("Эй, эй, эй, что так долго?...", "Ты уже закончил, амиго?")
