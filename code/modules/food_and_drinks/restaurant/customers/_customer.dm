@@ -44,11 +44,11 @@
 	/datum/venue/bar = list(/datum/reagent/consumable/ethanol/b52 = 6, /datum/reagent/consumable/ethanol/manhattan = 3, /datum/reagent/consumable/ethanol/atomicbomb = 1, /datum/reagent/consumable/ethanol/beer = 25))
 
 
-	found_seat_lines = list("Я надеюсь, что есть сиденье, которое выдержит мой вес.", "Я надеюсь, что смогу принести сюда свой пистолет.", "Надеюсь, у них есть тройной роскошный жирный бургер.", "Я просто любблю здешнюю культуру.")
+	found_seat_lines = list("Я надеюсь, что есть сиденье, которое выдержит мой вес.", "Я надеюсь, что смогу принести сюда свой пистолет.", "Надеюсь, у вас есть тройной роскошный жирный бургер.", "Мне просто здесь нравится.")
 	cant_find_seat_lines = list("Я так устала стоять...", "У меня хроническая боль в спине, пожалуйста, поторопитесь и усадите меня!", "Я не собираюсь давать чаевые, если не сяду.")
 	leave_mad_lines = list("НИКАКИХ СОВЕТОВ ДЛЯ ВАС. ПРОЩАЙ!", "По крайней мере, в SpaceDonalds еду подают БЫСТРО!", "Это ужасное место!", "Я поговорю с вашим менеджером!", "Я обязательно оставлю плохой отзыв о Yelp.")
 	leave_happy_lines = list("Дополнительный совет для тебя, мой друг.", "Спасибо за отличную еду!", "Диабет - это все равно миф!")
-	wait_for_food_lines = list("Послушай, дружище, я тут очень нетерпеливый!", "Я ждал целую вечность...")
+	wait_for_food_lines = list("Послушай, дружище, я очень нетерпеливый!", "Я жду целую вечность...")
 
 
 /datum/customer_data/italian
@@ -57,7 +57,7 @@
 	base_icon = "italian"
 	clothing_sets = list("italian_pison", "italian_godfather")
 
-	found_seat_lines = list("Какое чудесное место, чтобы посидеть.", "Я надеюсь, что они обслуживают его так же, как моя мама.")
+	found_seat_lines = list("Какое чудесное место, чтобы посидеть.", "Я надеюсь, что здесь обслуживают так же, как моя мама.")
 	cant_find_seat_lines = list("Mamma mia! Я просто хочу сесть!!", "Почему ты заставляешь меня стоять здесь?")
 	leave_mad_lines = list("Я не видел такого неуважения за долгие годы!", "Какое-ужасное заведение!")
 	leave_happy_lines = list("Это любовь!", "Так же, как это делала мама!")
@@ -72,8 +72,8 @@
 	prefix_file = "strings/names/french_prefix.txt"
 	base_icon = "french"
 	clothing_sets = list("french_fit")
-	found_seat_lines = list("Хон Хон Хон", "Это не Эйфелева башня, но подойдет.", "Фу, думаю, этого хватит.")
-	cant_find_seat_lines = list("Заставить кого-то вроде меня стоять? Как ты смеешь.", "What a filthy lobby!")
+	found_seat_lines = list("Хон Хон Хон", "Это не Эйфелева башня, но подойдет.", "Фух, думаю, с меня хватит.")
+	cant_find_seat_lines = list("Заставить кого-то вроде меня стоять? Как ты смеешь.", "Какое грязное помещение!")
 	leave_mad_lines = list("Sacre bleu!", "Merde! Это место хреново, чем Рейн!")
 	leave_happy_lines = list("Хон Хон Хон.", "Хорошее усилие.")
 	wait_for_food_lines = list("Хон Хон Хон")
@@ -96,11 +96,11 @@
 	base_icon = "japanese"
 	clothing_sets = list("japanese_animes")
 
-	found_seat_lines = list("Konnichiwa!", "Arigato gozaimasuuu~", "Надеюсь, есть бефстроганов...")
+	found_seat_lines = list("Konnichiwa!", "Arigato gozaimasuuu~", "Надеюсь, у вас есть бефстроганов...")
 	cant_find_seat_lines = list("Я уже хочу посидеть под вишневым деревом, сэмпай!", "Дайте мне место, пока моя Цундере не превратилась в Яндере!", "В этом месте меньше сидячих мест, чем в капсульном отеле!", "Негде сесть? Этот Шокунин такой холодный...")
 	leave_mad_lines = list("Не могу поверить, что ты это сделал! ВАААААААААААААХ!!", "Не то чтобы я когда-либо хотел твою еду! Б-бака...", "Я собирался дать вам мой совет!")
 	leave_happy_lines = list("О ПОСТАВЩИК ПИТАНИЯ! Это самый счастливый день в моей жизни. Я тебя люблю!", "Я беру чипсы .... И СЪЕМ ИХ!", "Itadakimasuuu~", "Спасибо за еду!")
-	wait_for_food_lines = list("Еды еще нет? Думаю, тут ничего не поделаешь.", "Я не могу дождаться встречи с вами, гамбургер-сама...", "Дай мне еду, скупердяй!")
+	wait_for_food_lines = list("Еды еще нет? Думаю, тут ничего не поделаешь.", "Я не могу дождаться встречи с вами, burger-sama...", "Где мой заказ, скупердяй!")
 	speech_sound = 'sound/creatures/tourist/tourist_talk_japanese1.ogg'
 	orderable_objects = list(
 	/datum/venue/restaurant = list(/obj/item/food/tofu = 5, /obj/item/food/breadslice/plain = 5, /obj/item/food/soup/milo = 10, /obj/item/food/soup/vegetable = 4, /obj/item/food/sashimi = 4, /obj/item/food/chawanmushi = 4, /obj/item/food/muffin/berry = 2, /obj/item/food/beef_stroganoff = 2),
@@ -141,4 +141,4 @@
 	cant_find_seat_lines = list("¿En Serio? Серьезно, мест нет?", "Andele! Я хочу стол, чтобы смотреть футбольный матч!", "Ay Caramba...")
 	leave_mad_lines = list("Aye dios mio, Я ухожу отсюда", "Esto es ridículo! Я ухожу", "Я видел, как готовят лучше в тако кампана!", "Я думал, это ресторан, pero es porquería!")
 	leave_happy_lines = list("Amigo, era delicio. Спасибо!", "Yo tuve el mono, а твой друг? Вы попали в точку.", "Как раз нужное количество острого!")
-	wait_for_food_lines = list("Эй, эй, эй, что так долго?...", "Ты уже готов, амиго?")
+	wait_for_food_lines = list("Эй, эй, эй, что так долго?...", "Ты уже закончил, амиго?")
