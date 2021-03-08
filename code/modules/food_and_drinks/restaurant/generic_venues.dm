@@ -32,7 +32,7 @@
 	return object_used.type == wanted_item
 
 /datum/venue/restaurant/order_food_line(obj/item/order)
-	return "Я возьму \a [initial(order.name)]"
+	return "Я возьму [initial(order.name)]"
 
 /datum/venue/restaurant/on_get_order(mob/living/simple_animal/robot_customer/customer_pawn, obj/item/order_item)
 	. = ..()
