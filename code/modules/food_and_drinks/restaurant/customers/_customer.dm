@@ -20,11 +20,11 @@
 	///Lines the robot says when leaving waiting for food
 	var/list/wait_for_food_lines = list("Я все еще жду еды")
 	///Line when pulled by a friendly venue owner
-	var/friendly_pull_line = "Where are we going?"
+	var/friendly_pull_line = "Куда мы идем?"
 	///Line when harrased by someone for the first time
-	var/first_warning_line = "Don't touch me!"
+	var/first_warning_line = "Не трогай меня!"
 	///Line when harrased by someone for the second time
-	var/second_warning_line = "This is your last warning!"
+	var/second_warning_line = "Это ваше последнее предупреждение!"
 	///Line when harrased by someone for the last time
 	var/self_defense_line = "Omae wa mo, shinderou."
 
@@ -58,10 +58,10 @@
 	leave_mad_lines = list("НИКАКИХ СОВЕТОВ ДЛЯ ВАС. ПРОЩАЙ!", "По крайней мере, в SpaceDonalds еду подают БЫСТРО!", "Это ужасное место!", "Я поговорю с вашим менеджером!", "Я обязательно оставлю плохой отзыв о Yelp.")
 	leave_happy_lines = list("Дополнительный совет для тебя, мой друг.", "Спасибо за отличную еду!", "Диабет - это все равно миф!")
 	wait_for_food_lines = list("Послушай, дружище, я очень нетерпеливый!", "Я жду целую вечность...")
-	friendly_pull_line = "Where are you taking me? Not to medbay I hope, I don't have insurance."
-	first_warning_line = "Don't tread on me!"
-	second_warning_line = "Last chance buddy! Don't tread on me!"
-	self_defense_line = "CASTLE DOCTRINE ACTIVATED!"
+	friendly_pull_line = "Куда вы меня везете? Не в медбей, надеюсь, у меня нет страховки."
+	first_warning_line = "Не наступай на меня!"
+	second_warning_line = "Последний шанс, приятель! Не наступай на меня!"
+	self_defense_line = "CASTLE DOCTRINE АКТИВИРОВАН!"
 
 
 /datum/customer_data/italian
@@ -75,10 +75,10 @@
 	leave_mad_lines = list("Я не видел такого неуважения за долгие годы!", "Какое-ужасное заведение!")
 	leave_happy_lines = list("Это любовь!", "Так же, как это делала мама!")
 	wait_for_food_lines = list("Я так голоден...")
-	friendly_pull_line = "No-a I'm a hungry! I don't want to go anywhere."
-	first_warning_line = "Do not-a touch me!"
-	second_warning_line = "Last warning! Do not touch my spaghet."
-	self_defense_line = "I'm going to knead you like mama kneaded her delicious meatballs!"
+	friendly_pull_line = "Нет, я голоден! Я не хочу никуда идти."
+	first_warning_line = "Не трогай меня!"
+	second_warning_line = "Последнее предупреждение! Не трогай мой спагет."
+	self_defense_line = "Я буду месить тебя, как мама месила свои аппетитные котлеты!"
 	orderable_objects = list(
 	/datum/venue/restaurant = list(/obj/item/food/spaghetti/pastatomato = 20, /obj/item/food/spaghetti/copypasta = 6, /obj/item/food/spaghetti/meatballspaghetti = 4, /obj/item/food/pizza/vegetable = 2, /obj/item/food/pizza/mushroom = 2, /obj/item/food/pizza/meat = 2, /obj/item/food/pizza/margherita = 2),
 	/datum/venue/bar = list(/datum/reagent/consumable/ethanol/fanciulli = 5, /datum/reagent/consumable/ethanol/branca_menta = 3, /datum/reagent/consumable/ethanol/beer = 10, /datum/reagent/consumable/lemonade = 8, /datum/reagent/consumable/ethanol/godfather = 5))
@@ -94,10 +94,10 @@
 	leave_mad_lines = list("Sacre bleu!", "Merde! Это место хреново, чем Рейн!")
 	leave_happy_lines = list("Хон Хон Хон.", "Хорошее усилие.")
 	wait_for_food_lines = list("Хон Хон Хон")
-	friendly_pull_line = "Your filthy hands on my outfit? Yegh, fine."
-	first_warning_line = "Get your hands off of me!"
-	second_warning_line = "Do not touch me you filthy animal, last warning!"
-	self_defense_line = "I will break you like a baguette!"
+	friendly_pull_line = "Ты прикоснулся своими грязными руками к одежде? Ага, хорошо."
+	first_warning_line = "Убери от меня руки!"
+	second_warning_line = "Не трогай меня, грязное животное, последнее предупреждение!"
+	self_defense_line = "Я тебя сломаю, как багет!"
 	speech_sound = 'sound/creatures/tourist/tourist_talk_french.ogg'
 	orderable_objects = list(
 	/datum/venue/restaurant = list(/obj/item/food/baguette = 20, /obj/item/food/garlicbread = 5, /obj/item/food/soup/onion = 4, /obj/item/food/pie/berryclafoutis = 2, /obj/item/food/omelette = 15),
@@ -122,9 +122,9 @@
 	leave_mad_lines = list("Не могу поверить, что ты так поступил со мной! ВАААААААААААААХ!!", "Не то чтобы я когда-либо хотел твою еду! Б-бака...", "Я собирался дать вам мой совет!")
 	leave_happy_lines = list("О ПОСТАВЩИК ПИТАНИЯ! Это самый счастливый день в моей жизни. Я тебя люблю!", "Я беру чипсы .... И СЪЕМ ИХ!", "Itadakimasuuu~", "Спасибо за еду!")
 	wait_for_food_lines = list("Еды еще нет? Думаю, тут ничего не поделаешь.", "Я не могу дождаться встречи с вами, burger-sama...", "Где мой заказ, скупердяй!")
-	friendly_pull_line = "O-oh, where are you taking me?"
-	first_warning_line = "Don't touch me you pervert!"
-	second_warning_line = "I'm going to go super saiyan if you touch me again! Last warning!"
+	friendly_pull_line = "О-о, куда ты меня ведешь?"
+	first_warning_line = "Не трогай меня, извращенец!"
+	second_warning_line = "Я собираюсь стать супер-сайаном, если ты снова прикоснешься ко мне! Последнее предупреждение!"
 	self_defense_line = "OMAE WA MO, SHINDEROU!"
 	speech_sound = 'sound/creatures/tourist/tourist_talk_japanese1.ogg'
 	orderable_objects = list(
@@ -146,10 +146,10 @@
 	leave_mad_lines = list("Это место просто ужасно, и я скажу это своим коллегам.", "Что за трата моего времени.", "Надеюсь, вы не гордитесь своей работой.")
 	leave_happy_lines = list("Спасибо за гостеприимство.", "Otsukaresama deshita.", "Деловые звонки.")
 	wait_for_food_lines = list("Zzzzzzzzzz...", "Dame da ne~", "Dame yo dame na no yo~")
-	friendly_pull_line = "Are we going on a business trip?"
-	first_warning_line = "Hey, only my employer gets to mess with me like that."
-	second_warning_line = "Leave me be, I'm trying to focus. Last warning!"
-	self_defense_line = "I didn't want it to end up like this."
+	friendly_pull_line = "Собираемся в командировку?"
+	first_warning_line = "Эй, только мой работодатель может так со мной обращаться."
+	second_warning_line = "Оставь меня в покое, я пытаюсь сосредоточиться. Последнее предупреждение!"
+	self_defense_line = "Я не хотел, чтобы все закончилось вот так."
 	speech_sound = 'sound/creatures/tourist/tourist_talk_japanese2.ogg'
 	orderable_objects = list(
 	/datum/venue/restaurant = list(/obj/item/food/tofu = 5, /obj/item/food/soup/milo = 6, /obj/item/food/soup/vegetable = 4, /obj/item/food/sashimi = 4, /obj/item/food/chawanmushi = 4, /obj/item/food/meatbun = 4, /obj/item/food/beef_stroganoff = 2),
@@ -171,7 +171,7 @@
 	leave_mad_lines = list("Aye dios mio, Я ухожу отсюда", "Esto es ridículo! Я ухожу", "Я видел, как готовят лучше в тако кампана!", "Я думал, это ресторан, pero es porquería!")
 	leave_happy_lines = list("Amigo, era delicio. Спасибо!", "Yo tuve el mono, а твой друг? Вы попали в точку.", "Как раз нужное количество острого!")
 	wait_for_food_lines = list("Эй, эй, эй, что так долго?...", "Ты уже закончил, амиго?")
-	friendly_pull_line = "Amigo, where are we headed?"
-	first_warning_line = "Amigo! Don't touch me like that."
-	second_warning_line = "Compadre, enough is enough! Last warning!"
-	self_defense_line = "Time for you to find out what kind of robot I am, eh?"
+	friendly_pull_line = "Амиго, куда мы направляемся?"
+	first_warning_line = "Амиго! Не трогай меня так."
+	second_warning_line = "Compadre, хватит, хватит! Последнее предупреждение!"
+	self_defense_line = "Пора тебе узнать, что я за робот, а?"
