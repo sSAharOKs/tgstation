@@ -162,12 +162,12 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 	)
 
 	var/list/safety = list(1,2,3)//Tells the proc which options to remove later on.
-	var/nouns = strings(ION_FILE, "ionabstract")
-	var/objects = strings(ION_FILE, "ionobjects")
-	var/adjectives = strings(ION_FILE, "ionadjectives")
-	var/threats = strings(ION_FILE, "ionthreats")
-	var/foods = strings(ION_FILE, "ionfood")
-	var/drinks = strings(ION_FILE, "iondrinks")
+	var/nouns = strings(ION_FILE_RU, "ionabstract")
+	var/objects = strings(ION_FILE_RU, "ionobjects")
+	var/adjectives = strings(ION_FILE_RU, "ionadjectives")
+	var/threats = strings(ION_FILE_RU, "ionthreats")
+	var/foods = strings(ION_FILE_RU, "ionfood")
+	var/drinks = strings(ION_FILE_RU, "iondrinks")
 	var/locations = strings(LOCATIONS_FILE, "locations")
 
 	var/list/names = list()
