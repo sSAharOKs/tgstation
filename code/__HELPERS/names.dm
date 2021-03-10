@@ -168,6 +168,7 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 	var/threats = strings(ION_FILE_RU, "ionthreats")
 	var/foods = strings(ION_FILE_RU, "ionfood")
 	var/drinks = strings(ION_FILE_RU, "iondrinks")
+	var/locations = strings(LOCATIONS_FILE, "locations")
 
 	var/list/names = list()
 	for(var/datum/data/record/t in GLOB.data_core.general)//Picks from crew manifest.
@@ -200,11 +201,13 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 						. += pick(SSjob.station_jobs)//Returns a job.
 				safety -= 1
 			if(2)
-				switch(rand(1,2))//Food, drinks, or places. Only selectable once.
+				switch(rand(1,3))//Food, drinks, or places. Only selectable once.
 					if(1)
 						. += lowertext(pick(drinks))
 					if(2)
 						. += lowertext(pick(foods))
+					if(3)
+						. += lowertext(pick(locations))
 				safety -= 2
 			if(3)
 				switch(rand(1,4))//Abstract nouns, objects, adjectives, threats. Can be selected more than once.
