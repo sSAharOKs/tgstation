@@ -36,7 +36,7 @@
 	return object_used.type == wanted_item
 
 /datum/venue/restaurant/order_food_line(obj/item/order)
-	return "I'll take \a [initial(order.name)]"
+	return "Я возьму [initial(order.name)]"
 
 /datum/venue/restaurant/on_get_order(mob/living/simple_animal/robot_customer/customer_pawn, obj/item/order_item)
 	. = ..()
@@ -94,7 +94,7 @@
 	return reagent_to_order
 
 /datum/venue/bar/order_food_line(datum/reagent/order)
-	return "I'll take a glass of [initial(order.name)]"
+	return "Я выпью стакан [initial(order.name)]"
 
 /datum/venue/bar/on_get_order(mob/living/simple_animal/robot_customer/customer_pawn, obj/item/order_item)
 	var/datum/reagent/consumable/ordered_reagent_type = customer_pawn.ai_controller.blackboard[BB_CUSTOMER_CURRENT_ORDER]
