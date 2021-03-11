@@ -18,9 +18,9 @@
 	var/aurora_progress = 0 //this cycles from 1 to 8, slowly changing colors from gentle green to gentle blue
 
 /datum/round_event/aurora_caelus/announce()
-	priority_announce("[station_name()]: A harmless cloud of ions is approaching your station, and will exhaust their energy battering the hull. Nanotrasen has approved a short break for all employees to relax and observe this very rare event. During this time, starlight will be bright but gentle, shifting between quiet green and blue colors. Any staff who would like to view these lights for themselves may proceed to the area nearest to them with viewing ports to open space. We hope you enjoy the lights.",
+	priority_announce("[station_name()]: Безвредное облако ионов приближается к вашей станции, они будут истощать свою энергию, колотя по корпусу.Компания Nanotrasen одобрила небольшой перерыв для всех сотрудников, чтобы расслабиться и понаблюдать за этим очень редким событием. В это время звездный свет будет ярким, но нежным, переходя от спокойного зеленого к голубому. Любой работник, который хотел бы сам увидеть эти огни, может пройти в ближайшую к ним зону с смотровыми иллюминаторами смотрящими в открытый космос. Мы надеемся, что вам понравится представление.",
 	sound = 'sound/misc/notice2.ogg',
-	sender_override = "Nanotrasen Meteorology Division")
+	sender_override = "Отдел метеорологии Нанотразен")
 	for(var/V in GLOB.player_list)
 		var/mob/M = V
 		if((M.client.prefs.toggles & SOUND_MIDI) && is_station_level(M.z))
@@ -49,9 +49,9 @@
 		if(initial(A.dynamic_lighting) == DYNAMIC_LIGHTING_IFSTARLIGHT)
 			for(var/turf/open/space/S in A)
 				fade_to_black(S)
-	priority_announce("The aurora caelus event is now ending. Starlight conditions will slowly return to normal. When this has concluded, please return to your workplace and continue work as normal. Have a pleasant shift, [station_name()], and thank you for watching with us.",
+	priority_announce("Событие авроры Целуса заканчивается. Условия звездного света постепенно вернутся к норме. Когда это закончится, пожалуйста, вернитесь на свое рабочее место и продолжайте работать в обычном режиме. Приятной смены, [station_name()] и спасибо , что посмотрели вместе с нами.",
 	sound = 'sound/misc/notice2.ogg',
-	sender_override = "Nanotrasen Meteorology Division")
+	sender_override = "Отдел метеорологии Нанотразен")
 
 /datum/round_event/aurora_caelus/proc/fade_to_black(turf/open/space/S)
 	set waitfor = FALSE

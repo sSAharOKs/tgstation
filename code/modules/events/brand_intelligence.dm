@@ -23,13 +23,13 @@
 
 
 /datum/round_event/brand_intelligence/announce(fake)
-	var/source = "unknown machine"
+	var/source = "неизвестной машины"
 	if(fake)
 		var/obj/machinery/vending/cola/example = /obj/machinery/vending/cola
 		source = initial(example.name)
 	else if(originMachine)
 		source = originMachine.name
-	priority_announce("Rampant brand intelligence has been detected aboard [station_name()]. Please stand by. The origin is believed to be \a [source].", "Machine Learning Alert")
+	priority_announce("На борту [station_name()] был обнаружен брендовый автомат с разумом. Пожалуйста, будьте наготове. Происхождение считается от [source].", "Предупреждение о машинном обучении")
 
 /datum/round_event/brand_intelligence/start()
 	for(var/obj/machinery/vending/V in GLOB.machines)

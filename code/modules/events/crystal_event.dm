@@ -1,20 +1,20 @@
 ///Global list that stores the 4 kinds of waves the crystal invasion can have and the portals each one can spawn
 GLOBAL_LIST_INIT(crystal_invasion_waves, list(
-	"small wave" = list(
+	"маленькая волна" = list(
 		/obj/structure/crystal_portal/small=4,
 		/obj/structure/crystal_portal/medium=1
 		),
-	"medium wave" = list(
+	"средняя волна" = list(
 		/obj/structure/crystal_portal/small=4,
 		/obj/structure/crystal_portal/medium=3,
 		/obj/structure/crystal_portal/big=1
 		),
-	"big wave" = list(
+	"Огромная волна" = list(
 		/obj/structure/crystal_portal/small=5,
 		/obj/structure/crystal_portal/medium=3,
 		/obj/structure/crystal_portal/big=2
 		),
-	"huge wave" = list(
+	"огромная волна" = list(
 		/obj/structure/crystal_portal/small=7,
 		/obj/structure/crystal_portal/medium=5,
 		/obj/structure/crystal_portal/big=3
@@ -98,7 +98,7 @@ This section is for the event controller
 		crystal_spawner_turfs += range_turf
 
 	for(var/i in 1 to 6)
-		var/pick_portal = pickweight(GLOB.crystal_invasion_waves["big wave"])
+		var/pick_portal = pickweight(GLOB.crystal_invasion_waves["Огромная волна"])
 		var/turf/portal_spawner_turf = pick(crystal_spawner_turfs)
 		new pick_portal(portal_spawner_turf)
 
@@ -158,36 +158,36 @@ This section is for the event controller
 
 ///After 8 seconds from the initial explosions centcom will announce the location of the huge portals
 /datum/round_event/crystal_invasion/proc/announce_locations()
-	priority_announce("WARNING - After tracking the powerspikes from your station we have determined that huge portals have appeared at the following locations:[center_areas.Join(", ")]. \
-						Please close those before attempting to stabilize the crystal.", "Alert")
+	priority_announce("ВНИМАНИЕ - После отслеживания скачков мощности с вашей станции мы определили, что огромные порталы появились в следующих местах:[center_areas.Join(", ")]. \
+						Пожалуйста, закройте их, прежде чем пытаться стабилизировать кристалл.", "Тревога")
 	sound_to_playing_players('sound/misc/notice1.ogg')
 
 /datum/round_event/crystal_invasion/announce(fake)
-	priority_announce("WARNING - Destabilization of the Supermatter Crystal Matrix detected, please stand by and await further instructions.", "Alert")
+	priority_announce("ВНИМАНИЕ - Обнаружена дестабилизация Кристаллической матрицы СуперМатерии, пожалуйста, приготовьтесь и ждите дальнейших инструкций.", "Тревога")
 	sound_to_playing_players('sound/misc/notice1.ogg')
 
 ///Choose the type of the wave
 /datum/round_event/crystal_invasion/proc/choose_wave_type()
 	if(!wave_name)
 		wave_name = pickweight(list(
-			"small wave" = 35,
-			"medium wave" = 45,
-			"big wave" = 15,
-			"huge wave" = 5))
+			"маленькая волна" = 35,
+			"средняя волна" = 45,
+			"Огромная волна" = 15,
+			"Огромная волна" = 5))
 	switch(wave_name)
-		if("small wave")
+		if("маленькая волна")
 			portal_numbers = 2
-		if("medium wave")
+		if("средняя волна")
 			portal_numbers = rand(2, 3)
-		if("big wave")
+		if("Огромная волна")
 			portal_numbers = rand(3, 4)
-		if("huge wave")
+		if("Огромная волна")
 			portal_numbers = rand(4, 5)
 		else
 			kill()
 			CRASH("Wave name of [wave_name] not recognised.")
 
-	priority_announce("WARNING - Numerous energy fluctuations have been detected from your Supermatter; we estimate a [wave_name] of crystalline creatures \
+	priority_announce("ПРЕДУПРЕЖДЕНИЕ - Многочисленные энергетические флуктуации были обнаружены от вашей Суперматерии; мы оцениваем [wave_name] кристаллических существ \
 						coming from \[REDACTED]; there will be [portal_numbers] main portals spread around the station that you must close. Harvest a \[REDACTED] \
 						crystal from a portal by using the anomaly neutralizer, place it inside a crystal stabilizer, and inject it into your Supermatter to stop a ZK-Lambda-Class Cosmic Fragmentation Scenario from occurring.", "Alert")
 	sound_to_playing_players('sound/misc/notice1.ogg')
@@ -202,8 +202,8 @@ This section is for the event controller
 
 ///If after 10 minutes the crystal is not stabilized more portals are spawned and the event progress further
 /datum/round_event/crystal_invasion/proc/more_portals()
-	priority_announce("WARNING - Detected another spike from the destabilized crystal. More portals are spawning all around the station, the next spike could \
-						cause a \[REDACTED] class event we assume you have five more minutes before total crystal annihilation", "Alert")
+	priority_announce("ВНИМАНИЕ - Обнаружен еще один скачок от дестабилизированного кристалла. Все больше порталов появляются вокруг станции, следующий всплеск может \
+						вызвать событие класса \[ОТРЕДАКТИРОВАНО] мы предполагаем, что у вас есть еще пять минут до полного уничтожения кристалла", "Тревога")
 	sound_to_playing_players('sound/misc/notice1.ogg')
 	var/list/spawners = list()
 	for(var/es in GLOB.generic_event_spawns)
@@ -211,7 +211,7 @@ This section is for the event controller
 		if(is_station_level(temp.z))
 			spawners += temp
 	for(var/i in 1 to rand(10, 15))
-		spawn_portal(GLOB.crystal_invasion_waves["medium wave"], spawners)
+		spawn_portal(GLOB.crystal_invasion_waves["средняя волна"], spawners)
 
 /datum/round_event/crystal_invasion/tick()
 	if(activeFor == second_wave)
@@ -235,8 +235,8 @@ This section is for the event controller
 ///This proc announces that the event is concluding with the worst scenario
 /datum/round_event/crystal_invasion/proc/zk_event_announcement()
 	dest_crystal.active = FALSE
-	priority_announce("WARNING - The crystal has reached critical instability point. ZK-Event inbound, please do not panic, anyone who panics will \
-						be terminated on the spot. Have a nice day", "Alert")
+	priority_announce("ВНИМАНИЕ - Кристалл достиг критической точки нестабильности. ZK-входящее событие, пожалуйста, не паникуйте, любой, кто запаникует, будет \
+						уничтожен на месте. Хорошего дня", "Тревога")
 	sound_to_playing_players('sound/machines/alarm.ogg')
 	addtimer(CALLBACK(src, .proc/do_zk_event), 10 SECONDS)
 
@@ -248,15 +248,15 @@ This section is for the event controller
 		if(is_station_level(temp.z))
 			spawners += temp
 	for(var/i in 1 to rand(15, 25))
-		spawn_portal(GLOB.crystal_invasion_waves["huge wave"], spawners)
+		spawn_portal(GLOB.crystal_invasion_waves["Огромная волна"], spawners)
 	explosion(dest_crystal.loc, 15, 26, 33, 35, 1, 1) //a bit smaller than max supermatter explosion
-	priority_announce("WARNING - Portal are appearing everywhere, you failed to contain the event. You people should feel ashamed of yourselves!","Alarm")
+	priority_announce("ВНИМАНИЕ - Портал появляется везде, вы не смогли сдержать событие. Вам, ребята, должно быть стыдно!","Тревога")
 	QDEL_NULL(dest_crystal)
 
 ///Restore the Destabilized Crystal as it was before
 /datum/round_event/crystal_invasion/proc/restore()
-	priority_announce("The Crystal has been restored and is now stable again, your sector of space is now safe from the ZK-Lambda-Class Scenario, \
-						kill the remaining crystal monsters and go back to work")
+	priority_announce("Кристалл был восстановлен и теперь снова стабилен, ваш космический сектор теперь в безопасности от сценария ZK-Лямбда-класса, \
+						убейте оставшихся крустальных монстров и возвращайтесь к работе")
 	sound_to_playing_players('sound/misc/notice2.ogg')
 	var/turf/loc_turf = get_turf(dest_crystal.loc)
 	new/obj/machinery/power/supermatter_crystal(loc_turf)
@@ -435,7 +435,7 @@ This section is for the destabilized SM
 	for(var/find_portal in GLOB.crystal_portals)
 		var/obj/structure/crystal_portal/portal = find_portal
 		portal.modify_component()
-	priority_announce("The sacrifice of a crewmember (hopefully the clown) appears to have weakened the portals and slowed down the number of monsters coming through!")
+	priority_announce("Жертва члена экипажа (надеемся, клоуна), похоже, ослабила порталы и замедлила количество монстров, проходящих через них!")
 	sound_to_playing_players('sound/misc/notice2.ogg')
 
 /*
