@@ -44,7 +44,7 @@
 		CRASH("Anomaly : No valid turfs found for [impact_area] - [impact_area.type]")
 
 /datum/round_event/anomaly/announce(fake)
-	priority_announce("Локализованная волна энергетического потока, обнаруженная на сканерах дальнего действия. Ожидаемое место удара: [impact_area.name].", "Предупреждение об аномалии")
+	priority_announce("Локализованная волна энергетического потока, обнаруженная на сканерах дальнего действия. Ожидаемое местоположение: [impact_area.name].", "Предупреждение об аномалии")
 
 /datum/round_event/anomaly/start()
 	var/turf/T = pick(get_area_turfs(impact_area))

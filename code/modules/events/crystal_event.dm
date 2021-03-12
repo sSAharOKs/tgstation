@@ -21,6 +21,8 @@ GLOBAL_LIST_INIT(crystal_invasion_waves, list(
 		),
 	))
 ///Global list that stores the all the instantiated portals around the station, used when stabilizing the crystal
+//Я не уверен что именно перевод этих частей с волнами будет работать
+// Но надеюсь он ничего не сломает
 GLOBAL_LIST_EMPTY(crystal_portals)
 ///Global list that store the huge portals that spawn at the start of the event
 GLOBAL_LIST_EMPTY(huge_crystal_portals)
@@ -187,9 +189,9 @@ This section is for the event controller
 			kill()
 			CRASH("Wave name of [wave_name] not recognised.")
 
-	priority_announce("ПРЕДУПРЕЖДЕНИЕ - Многочисленные энергетические флуктуации были обнаружены от вашей Суперматерии; мы оцениваем [wave_name] кристаллических существ \
-						coming from \[REDACTED]; there will be [portal_numbers] main portals spread around the station that you must close. Harvest a \[REDACTED] \
-						crystal from a portal by using the anomaly neutralizer, place it inside a crystal stabilizer, and inject it into your Supermatter to stop a ZK-Lambda-Class Cosmic Fragmentation Scenario from occurring.", "Alert")
+	priority_announce("ПРЕДУПРЕЖДЕНИЕ - Многочисленные энергетические флуктуации были обнаружены от вашей Суперматерии; мы оцениваем что это [wave_name] кристаллических существ \
+						выходящих из \[ОТРЕДАКТИРОВАНО]; вокруг станции будут разбросаны главные порталы [portal_numbers], которые вы должны закрыть. Соберие \[ОТРЕДАКТИРОВАНО] \
+кристалл из портала с помощью нейтрализатора аномалий поместите его в кристаллический стабилизатор и впрысните в свою Суперматерию, чтобы предотвратить Сценарий Космической фрагментации класса ZK-Лямбда.", "Тревога")
 	sound_to_playing_players('sound/misc/notice1.ogg')
 
 ///Spawn one portal in a random location choosen from the generic_event_spawns list
@@ -250,13 +252,13 @@ This section is for the event controller
 	for(var/i in 1 to rand(15, 25))
 		spawn_portal(GLOB.crystal_invasion_waves["Огромная волна"], spawners)
 	explosion(dest_crystal.loc, 15, 26, 33, 35, 1, 1) //a bit smaller than max supermatter explosion
-	priority_announce("ВНИМАНИЕ - Портал появляется везде, вы не смогли сдержать событие. Вам, ребята, должно быть стыдно!","Тревога")
+	priority_announce("ВНИМАНИЕ - Порталы появляются везде, вы не смогли сдержать событие. Вам, ребята, должно быть стыдно!","Тревога")
 	QDEL_NULL(dest_crystal)
 
 ///Restore the Destabilized Crystal as it was before
 /datum/round_event/crystal_invasion/proc/restore()
 	priority_announce("Кристалл был восстановлен и теперь снова стабилен, ваш космический сектор теперь в безопасности от сценария ZK-Лямбда-класса, \
-						убейте оставшихся крустальных монстров и возвращайтесь к работе")
+						убейте оставшихся кристальных монстров и возвращайтесь к работе")
 	sound_to_playing_players('sound/misc/notice2.ogg')
 	var/turf/loc_turf = get_turf(dest_crystal.loc)
 	new/obj/machinery/power/supermatter_crystal(loc_turf)

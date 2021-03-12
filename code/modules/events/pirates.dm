@@ -10,7 +10,7 @@
 
 #define PIRATES_ROGUES "Rogues"
 #define PIRATES_SILVERSCALES "Silverscales"
-#define PIRATES_DUTCHMAN "Flying Dutchman"
+#define PIRATES_DUTCHMAN "Летучий голландец"
 
 /datum/round_event_control/pirates/preRunEvent()
 	if (!SSmapping.empty_space)
@@ -26,7 +26,7 @@
 	var/paid_off = FALSE
 	var/pirate_type
 	var/ship_template
-	var/ship_name = "Space Privateers Association"
+	var/ship_name = "Ассоциация космических пиратов"
 	var/shuttle_spawned = FALSE
 
 /datum/round_event/pirates/setup()
@@ -37,10 +37,10 @@
 		if(PIRATES_SILVERSCALES)
 			ship_name = pick(strings(PIRATE_NAMES_FILE, "silverscale_names"))
 		if(PIRATES_DUTCHMAN)
-			ship_name = "Flying Dutchman"
+			ship_name = "Летучий голландец"
 
 /datum/round_event/pirates/announce(fake)
-	priority_announce("Incoming subspace communication. Secure channel opened at all communication consoles.", "Incoming Message", SSstation.announcer.get_rand_report_sound())
+	priority_announce("Входящая субпространственная связь. На всех коммуникационных консолях, был открыт защищенный канал.", "Входящее Сообщение", SSstation.announcer.get_rand_report_sound())
 	if(fake)
 		return
 	threat = new
@@ -50,19 +50,19 @@
 	switch(pirate_type)
 		if(PIRATES_ROGUES)
 			ship_template = /datum/map_template/shuttle/pirate/default
-			threat.title = "Sector protection offer"
-			threat.content = "Hey, pal, this is the [ship_name]. Can't help but notice you're rocking a wild and crazy shuttle there with NO INSURANCE! Crazy. What if something happened to it, huh?! We've done a quick evaluation on your rates in this sector and we're offering [payoff] to cover for your shuttle in case of any disaster."
-			threat.possible_answers = list("Purchase Insurance.","Reject Offer.")
+			threat.title = "Предложение по защите сектора"
+			threat.content = "Эй, дружище, это [ship_name]. Не могу не заметить, что ты раскачиваешь там дикий и сумасшедший шаттл без СТРАХОВКИ! Безумец. А что, если с ним что-нибудь случится?! Мы провели быструю оценку ваших ставок в этом секторе и предлагаем оплату в размере [payoff], чтобы прикрыть ваш шаттл в случае любой катастрофы."
+			threat.possible_answers = list("Купить страховку.","Отклонить предложение.")
 		if(PIRATES_SILVERSCALES)
 			ship_template = /datum/map_template/shuttle/pirate/silverscale
-			threat.title = "Tribute to high society"
-			threat.content = "This is the [ship_name]. The Silver Scales wish for some tribute from your plebeian lizards. [payoff] credits should do the trick."
-			threat.possible_answers = list("We'll pay.","Tribute? Really? Go away.")
+			threat.title = "Дань уважения высшему обществу"
+			threat.content = "Это [ship_name]. Серебряные Весы хотят получить дань от ваших плебейских ящериц. [payoff] кредитов должны сделать свое дело."
+			threat.possible_answers = list("Мы заплатим.","Дань? Серьезно ? Ты сектором ошибся.")
 		if(PIRATES_DUTCHMAN)
 			ship_template = /datum/map_template/shuttle/pirate/dutchman
-			threat.title = "Business proposition"
-			threat.content = "Ahoy! This be the [ship_name]. Cough up [payoff] credits or you'll walk the plank."
-			threat.possible_answers = list("We'll pay.","We will not be extorted.")
+			threat.title = "Бизнес-предложение"
+			threat.content = "Ахой! Это [ship_name]. Откашляйте [payoff] кредитов, или вы пойдете по доске."
+			threat.possible_answers = list("Мы заплатим.","Нас так просто не проведешь.")
 	threat.answer_callback = CALLBACK(src,.proc/answered)
 	SScommunications.send_message(threat,unique = TRUE)
 
@@ -71,15 +71,15 @@
 		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
 		if(D)
 			if(D.adjust_money(-payoff))
-				priority_announce("Thanks for the credits, landlubbers.",sender_override = ship_name)
+				priority_announce("Спасибо за кредиты, сухопутники.",sender_override = ship_name)
 				paid_off = TRUE
 				return
 			else
-				priority_announce("Trying to cheat us? You'll regret this!",sender_override = ship_name)
+				priority_announce("Пытаешься обмануть нас? Ты пожалеешь об этом!",sender_override = ship_name)
 	if(!shuttle_spawned)
 		spawn_shuttle()
 	else
-		priority_announce("Too late to beg for mercy!",sender_override = ship_name)
+		priority_announce("Слишком поздно молить о пощаде!",sender_override = ship_name)
 
 /datum/round_event/pirates/start()
 	if(threat && !threat.answered)
@@ -115,7 +115,7 @@
 			else
 				announce_to_ghosts(spawner)
 
-	priority_announce("Unidentified armed ship detected near the station.")
+	priority_announce("Неопознанный вооруженный корабль обнаружен вблизи станции.")
 
 //Shuttle equipment
 
