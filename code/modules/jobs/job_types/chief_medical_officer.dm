@@ -30,7 +30,7 @@
 /datum/job/chief_medical_officer/announce(mob/living/carbon/human/H, announce_captaincy = FALSE)
 	..()
 	if(announce_captaincy)
-		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Due to staffing shortages, newly promoted Acting Captain [H.real_name] on deck!"))
+		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Из-за нехватки персонала недавно назначенный исполняющий обязанности капитана [H.real_name] на палубе!"))
 
 /datum/outfit/job/cmo
 	name = "Chief Medical Officer"

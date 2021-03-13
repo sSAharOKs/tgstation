@@ -9,16 +9,16 @@
 		sound = SSstation.announcer.event_sounds[sound]
 
 	if(type == "Priority")
-		announcement += "<h1 class='alert'>Priority Announcement</h1>"
+		announcement += "<h1 class='alert'>Приоритетное объявление</h1>"
 		if (title && length(title) > 0)
 			announcement += "<br><h2 class='alert'>[html_encode(title)]</h2>"
 	else if(type == "Captain")
-		announcement += "<h1 class='alert'>Captain Announces</h1>"
+		announcement += "<h1 class='alert'>Капитан Объявляет</h1>"
 		GLOB.news_network.SubmitArticle(html_encode(text), "Captain's Announcement", "Station Announcements", null)
 
 	else
 		if(!sender_override)
-			announcement += "<h1 class='alert'>[command_name()] Update</h1>"
+			announcement += "<h1 class='alert'>[command_name()] объявляет</h1>"
 		else
 			announcement += "<h1 class='alert'>[sender_override]</h1>"
 		if (title && length(title) > 0)
@@ -26,9 +26,9 @@
 
 		if(!sender_override)
 			if(title == "")
-				GLOB.news_network.SubmitArticle(text, "Объявление центрального командования", "Station Announcements", null)
+				GLOB.news_network.SubmitArticle(text, "Объявление центрального командования", "Объявление станции", null)
 			else
-				GLOB.news_network.SubmitArticle(title + "<br><br>" + text, "Central Command", "Station Announcements", null)
+				GLOB.news_network.SubmitArticle(title + "<br><br>" + text, "Капитан", "Объявление станции", null)
 
 	///If the announcer overrides alert messages, use that message.
 	if(SSstation.announcer.custom_alert_message && !has_important_message)
@@ -49,7 +49,7 @@
 		title = "Classified [command_name()] Update"
 
 	if(announce)
-		priority_announce("A report has been downloaded and printed out at all communications consoles.", "Incoming Classified Message", SSstation.announcer.get_rand_report_sound(), has_important_message = TRUE)
+		priority_announce("Отчет был загружен и распечатан на всех консолях связи.", "Входящее Секретное Сообщение", SSstation.announcer.get_rand_report_sound(), has_important_message = TRUE)
 
 	var/datum/comm_message/M  = new
 	M.title = title
@@ -57,7 +57,7 @@
 
 	SScommunications.send_message(M)
 
-/proc/minor_announce(message, title = "Attention:", alert, html_encode = TRUE)
+/proc/minor_announce(message, title = "Внимание:", alert, html_encode = TRUE)
 	if(!message)
 		return
 

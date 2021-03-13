@@ -441,7 +441,7 @@
 			main_objective.completed = TRUE
 	sound_to_playing_players('sound/machines/alarm.ogg')
 	sleep(100)
-	priority_announce("A large amount of lifeforms have been detected approaching [station_name()] at extreme speeds. Evacuation of the remaining crew will begin immediately.", "Central Command Spatial Corps")
+	priority_announce("Было обнаружено большое количество форм жизни прибывающих на [station_name()] на экстремальных скоростях. Эвакуация оставшейся части экипажа начнется немедленно.", "Отдел соблюдения скоростного режима Центком")
 	for(var/obj/structure/carp_rift/rift in rift_list)
 		rift.carp_stored = 999999
 	sleep(50)
@@ -610,7 +610,7 @@
 	if(time_charged >= max_charge)
 		charge_state = CHARGE_COMPLETED
 		var/area/A = get_area(src)
-		priority_announce("Spatial object has reached peak energy charge in [initial(A.name)], please stand-by.", "Central Command Spatial Corps")
+		priority_announce("объект достиг пикового энергетического заряда в [initial(A.name)], пожалуйста,приготовьтесь.", "Отдел соблюдения скоростного режима Центком")
 		obj_integrity = INFINITY
 		icon_state = "carp_rift_charged"
 		set_light_color(LIGHT_COLOR_YELLOW)
@@ -630,7 +630,7 @@
 	if(charge_state < CHARGE_FINALWARNING && time_charged >= (max_charge * 0.5))
 		charge_state = CHARGE_FINALWARNING
 		var/area/A = get_area(src)
-		priority_announce("A rift is causing an unnaturally large energy flux in [initial(A.name)].  Stop it at all costs!", "Central Command Spatial Corps", ANNOUNCER_SPANOMALIES)
+		priority_announce("Разлом вызывает неестественно большой поток энергии в [initial(A.name)].  Остановите его всеми силами!", "Отдел соблюдения скоростного режима Центком", ANNOUNCER_SPANOMALIES)
 
 /**
  * Used to create carp controlled by ghosts when the option is available.

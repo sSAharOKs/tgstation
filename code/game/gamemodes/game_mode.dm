@@ -296,8 +296,8 @@
 	intercepttext += generate_station_goal_report()
 	intercepttext += generate_station_trait_report()
 
-	print_command_report(intercepttext, "Central Command Status Summary", announce=FALSE)
-	priority_announce("A summary has been copied and printed to all communications consoles.", "Enemy communication intercepted. Security level elevated.", ANNOUNCER_INTERCEPT)
+	print_command_report(intercepttext, "Сводная информация Центрального командования", announce=FALSE)
+	priority_announce("Сводка скопирована и распечатана на всех консолях связи.", "Вражеская связь перехвачена.Уровень безопасности повышен.", ANNOUNCER_INTERCEPT)
 	if(GLOB.security_level < SEC_LEVEL_BLUE)
 		set_security_level(SEC_LEVEL_BLUE)
 

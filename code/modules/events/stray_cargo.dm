@@ -14,7 +14,7 @@
 	var/static/list/stray_spawnable_supply_packs = list() ///List of default spawnable supply packs, filtered from the cargo list
 
 /datum/round_event/stray_cargo/announce(fake)
-	priority_announce("Заблудившаяся грузовая капсула обнаружена на сканерах дальнего действия. Ожидаемое место падения: [impact_area.name].", "Предупреждение о столкновении")
+	priority_announce("Потерянная грузовая капсула обнаружена на сканерах дальнего действия. Ожидаемое место падения: [impact_area.name].", "Предупреждение о столкновении")
 
 /**
 * Tries to find a valid area, throws an error if none are found

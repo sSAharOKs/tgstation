@@ -4,15 +4,15 @@
 // Multiple goals with less impact but more department focused
 
 /datum/station_goal
-	var/name = "Generic Goal"
+	var/name = "Задача станции"
 	var/weight = 1 //In case of multiple goals later.
 	var/required_crew = 10
 	var/list/gamemode_blacklist = list()
 	var/completed = FALSE
-	var/report_message = "Complete this goal."
+	var/report_message = "Завершить задачу."
 
 /datum/station_goal/proc/send_report()
-	priority_announce("Priority Nanotrasen directive received. Project \"[name]\" details inbound.", "Incoming Priority Message", SSstation.announcer.get_rand_report_sound())
+	priority_announce("Приоритетная директива по Нанотразен получена. Проект \"[name]\" сведения о проекте присутствуют.", "Входящее приоритетное сообщение.", SSstation.announcer.get_rand_report_sound())
 	print_command_report(get_report(),"Nanotrasen Directive [pick(GLOB.phonetic_alphabet)] \Roman[rand(1,50)]", announce=FALSE)
 	on_report()
 

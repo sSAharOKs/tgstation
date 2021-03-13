@@ -26,10 +26,10 @@
 		G.on_report()
 
 /datum/game_mode/extended/announced/send_intercept()
-	var/greenshift_message = "Thanks to the tireless efforts of our security and intelligence divisions, there are currently no credible threats to [station_name()]. All station construction projects have been authorized. Have a secure shift!"
-	. += "<b><i>Central Command Status Summary</i></b><hr>"
+	var/greenshift_message = "Благодаря неустанным усилиям наших отделов безопасности и разведки в настоящее время нет никаких достоверных угроз для [station_name()]. Все проекты строительства станции были санкционированы. Обеспечьте себе безопасную смену!"
+	. += "<b><i>Сводная информация о состоянии Центрального командования</i></b><hr>"
 	. += greenshift_message
 	. += generate_station_trait_report()
 
 	print_command_report(., "Central Command Status Summary", announce = FALSE)
-	priority_announce(greenshift_message, "Security Report", SSstation.announcer.get_rand_report_sound())
+	priority_announce(greenshift_message, "Отчет о безопасности", SSstation.announcer.get_rand_report_sound())

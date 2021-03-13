@@ -47,7 +47,7 @@
 		department = event_control.picked_department
 		event_control.picked_department = null
 	else
-		department = pick(list("Uprising of Assistants", "Medical", "Engineering", "Science", "Supply", "Service", "Security") - cannot_pick)
+		department = pick(list("Ассистентский", "Медицинский", "Инженерный", "Научный", "Карго", "Сервисный", "Охранный") - cannot_pick)
 		if(!department)
 			message_admins("Department Revolt could not create a nation, as all the departments are independent! You have created nations, you madman!")
 	var/list/jobs_to_revolt = list()
@@ -55,32 +55,32 @@
 	var/list/citizens = list()
 
 	switch(department)
-		if("Uprising of Assistants") //God help you
-			jobs_to_revolt = list("Assistant")
-			nation_name = pick("Assa", "Mainte", "Tunnel", "Gris", "Grey", "Liath", "Grigio", "Ass", "Assi")
-		if("Medical")
+		if("Ассистентский") //God help you
+			jobs_to_revolt = list("Ассистенты")
+			nation_name = pick("тулбоксо", "техтонель", "тунельщи", "Грю", "Грей тайд", "Лиа", "Гриджио", "Ассит", "Асси")
+		if("Медицинский")
 			jobs_to_revolt = GLOB.medical_positions
-			nation_name = pick("Mede", "Healtha", "Recova", "Chemi", "Viro", "Psych")
-		if("Engineering")
+			nation_name = pick("Меди", "Здоровь", "Рекова", "Хими", "Виро", "Психо")
+		if("Инженерный")
 			jobs_to_revolt = GLOB.engineering_positions
-			nation_name = pick("Atomo", "Engino", "Power", "Teleco")
-		if("Science")
+			nation_name = pick("Атмо", "Энджиро", "Электро", "Телеко")
+		if("Научный")
 			jobs_to_revolt = GLOB.science_positions
-			nation_name = pick("Sci", "Griffa", "Geneti", "Explosi", "Mecha", "Xeno", "Nani", "Cyto")
-		if("Supply")
+			nation_name = pick("Науч", "Гриффа", "Генетик", "Взрыво", "Меха", "Ксено", "Нанит", "Цито")
+		if("Карго")
 			jobs_to_revolt = GLOB.supply_positions
-			nation_name = pick("Cargo", "Guna", "Suppli", "Mule", "Crate", "Ore", "Mini", "Shaf")
-		if("Service") //the few, the proud, the technically aligned
+			nation_name = pick("Карго", "Гуна", "Снабжэ", "Мулэ", "Ящико", "Рудно", "Мини", "Шахтно")
+		if("Сервисный") //the few, the proud, the technically aligned
 			jobs_to_revolt = GLOB.service_positions.Copy() - list("Assistant", "Prisoner")
-			nation_name = pick("Honka", "Boozo", "Fatu", "Danka", "Mimi", "Libra", "Jani", "Religi")
-		if("Security")
+			nation_name = pick("Хонка", "Выпико", "Тофу", "Утко", "Мини", "Библио", "Уборщико", "Религи")
+		if("Охранный")
 			jobs_to_revolt = GLOB.security_positions
-			nation_name = pick("Securi", "Beepski", "Shitcuri", "Red", "Stunba", "Flashbango", "Flasha", "Stanfordi")
+			nation_name = pick("Охрано", "бипски", "Сщиткьюри", "Комунно", "Станба", "Флешбен", "Флешко", "Перма")
 
-	nation_name += pick("stan", "topia", "land", "nia", "ca", "tova", "dor", "ador", "tia", "sia", "ano", "tica", "tide", "cis", "marea", "co", "taoide", "slavia", "stotzka")
-	if(department == "Uprising of Assistants")
-		var/prefix = pick("roving clans", "barbaric tribes", "tides", "bandit kingdom", "tribal society", "marauder clans", "horde")
-		nation_name = "The [prefix] of [nation_name]"
+	nation_name += pick("стан", "топия", "лэнд", "ния", "това", "дор", "тор", "тия", "сиа", "дия", "тика", "тайд", "сцист", "мармэ", "ко", "тиадов", "славия", "стотца")
+	if(department == "Ассистентский")
+		var/prefix = pick("бродячий клан", "варварское племя", "тулбоксоносцы", "бандитское царство", "общество", "клан мародёров", "орда")
+		nation_name = " [prefix] [nation_name]"
 
 	var/datum/team/nation/nation = new(null, jobs_to_revolt, department)
 	nation.name = nation_name
@@ -105,12 +105,12 @@
 
 	if(citizens.len)
 		var/jobs_english_list = english_list(jobs_to_revolt)
-		message_admins("The nation of [nation_name] has been formed. Affected jobs are [jobs_english_list]. Any new crewmembers with these jobs will join the secession.")
+		message_admins("Нация [nation_name] была сформирована. Затронут(ы) [jobs_english_list] отдел(ы). Любые новые члены экипажа с этими должностями присоединятся к отделению.")
 		if(announcement)
-			var/announce_text = "The new independent state of [nation_name] has formed from the ashes of the [department] department!"
-			if(department == "Uprising of Assistants") //the text didn't really work otherwise
-				announce_text = "The assistants of the station have risen to form the new independent state of [nation_name]!"
-			priority_announce(announce_text, "Secession from [GLOB.station_name]",  has_important_message = TRUE)
+			var/announce_text = "Новое независимое государство [nation_name]. Бывший [department] отдел!"
+			if(department == "Ассистентов") //the text didn't really work otherwise
+				announce_text = "Ассистенты восстали, чтобы сформировать новое независимое государство под именем [nation_name]!"
+			priority_announce(announce_text, "Отделы на [GLOB.station_name]",  has_important_message = TRUE)
 	else
-		message_admins("The nation of [nation_name] did not have enough potential members to be created.")
+		message_admins("Нация [nation_name] не имела достаточного количества потенциальных членов для создания.")
 		qdel(nation)

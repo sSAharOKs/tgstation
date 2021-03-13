@@ -125,9 +125,9 @@
 		var/repeal = (authorized.len < old_len)
 		var/remaining = max(0, auth_need - authorized.len)
 		if(authorized.len && remaining)
-			minor_announce("[remaining] authorizations needed until shuttle is launched early", null, alert)
+			minor_announce("[remaining] авторизаций необходимо для раннего запуска шаттла", null, alert)
 		if(repeal)
-			minor_announce("Early launch authorization revoked, [remaining] authorizations needed")
+			minor_announce("Разрешение на ранний запуск отозвано, [remaining] авторизаций требуется")
 
 	acted_recently += user
 	ui_interact(user)
@@ -174,8 +174,8 @@
 		// shuttle timers use 1/10th seconds internally
 		SSshuttle.emergency.setTimer(ENGINES_START_TIME)
 		var/system_error = obj_flags & EMAGGED ? "SYSTEM ERROR:" : null
-		minor_announce("The emergency shuttle will launch in \
-			[TIME_LEFT] seconds", system_error, alert=TRUE)
+		minor_announce("Аварийный шаттл стартует через \
+			[TIME_LEFT] секунд", system_error, alert=TRUE)
 		. = TRUE
 
 /obj/machinery/computer/emergency_shuttle/proc/increase_hijack_stage()
@@ -343,7 +343,7 @@
 	else
 		SSshuttle.emergencyLastCallLoc = null
 
-	priority_announce("The emergency shuttle has been called. [redAlert ? "Red Alert state confirmed: Dispatching priority shuttle. " : "" ]It will arrive in [timeLeft(600)] minutes.[reason][SSshuttle.emergencyLastCallLoc ? "\n\nCall signal traced. Results can be viewed on any communications console." : "" ][SSshuttle.adminEmergencyNoRecall ? "\n\nWarning: Shuttle recall subroutines disabled; Recall not possible." : ""]", null, ANNOUNCER_SHUTTLECALLED, "Priority")
+	priority_announce("Вызван эвакуационный шаттл. [redAlert ? "Состояние красной тревоги подтверждено: Отправка приоритетного шаттла. " : "" ]Он прибудет через [timeLeft(600)] минут.[reason][SSshuttle.emergencyLastCallLoc ? "\n\nСигнал вызова прослежен. Результаты можно просмотреть на любой коммуникационной консоли." : "" ][SSshuttle.adminEmergencyNoRecall ? "\n\nПредупреждение: Функция возврата шаттла отключена; Возврат невозможен." : ""]", null, ANNOUNCER_SHUTTLECALLED, "Приоритентное")
 
 /obj/docking_port/mobile/emergency/cancel(area/signalOrigin)
 	if(mode != SHUTTLE_CALL)
@@ -358,7 +358,7 @@
 		SSshuttle.emergencyLastCallLoc = signalOrigin
 	else
 		SSshuttle.emergencyLastCallLoc = null
-	priority_announce("The emergency shuttle has been recalled.[SSshuttle.emergencyLastCallLoc ? " Recall signal traced. Results can be viewed on any communications console." : "" ]", null, ANNOUNCER_SHUTTLERECALLED, "Priority")
+	priority_announce("Эвакуационный шаттл отозван.[SSshuttle.emergencyLastCallLoc ? " Сигнал отзыва прослежен. Результаты можно просмотреть на любой коммуникационной консоли." : "" ]", null, ANNOUNCER_SHUTTLERECALLED, "Приоритетное")
 
 	SSticker.emergency_reason = null
 
@@ -447,7 +447,7 @@
 				mode = SHUTTLE_DOCKED
 				setTimer(SSshuttle.emergencyDockTime)
 				send2adminchat("Server", "The Emergency Shuttle has docked with the station.")
-				priority_announce("[SSshuttle.emergency] has docked with the station. You have [timeLeft(600)] minutes to board the Emergency Shuttle.", null, ANNOUNCER_SHUTTLEDOCK, "Priority")
+				priority_announce("[SSshuttle.emergency] состыковался со станцией. У вас есть [timeLeft(600)] минут для посадки на шаттл", null, ANNOUNCER_SHUTTLEDOCK, "Приоритетное")
 				ShuttleDBStuff()
 
 
@@ -498,7 +498,7 @@
 				mode = SHUTTLE_ESCAPE
 				launch_status = ENDGAME_LAUNCHED
 				setTimer(SSshuttle.emergencyEscapeTime * engine_coeff)
-				priority_announce("The Emergency Shuttle has left the station. Estimate [timeLeft(600)] minutes until the shuttle docks at Central Command.", null, null, "Priority")
+				priority_announce("Эвакуационный шаттл покинул станцию. Оцениваем [timeLeft(600)] минут до стыковки шаттла у Центрального командования.", null, null, "Приоритетное")
 				INVOKE_ASYNC(SSticker, /datum/controller/subsystem/ticker.proc/poll_hearts)
 				SSmapping.mapvote() //If no map vote has been run yet, start one.
 
@@ -538,9 +538,9 @@
 				var/destination_dock = "emergency_away"
 				if(is_hijacked() || elimination_hijack())
 					destination_dock = "emergency_syndicate"
-					minor_announce("Corruption detected in \
-						shuttle navigation protocols. Please contact your \
-						supervisor.", "SYSTEM ERROR:", alert=TRUE)
+					minor_announce("Ошибка обнаруженна в\
+						навигационных протоколах шаттла. Пожалуйста, свяжитесь с вашим\
+						руководителем.", "СИСТЕМНАЯ ОШИБКА:", alert=TRUE)
 
 				dock_id(destination_dock)
 				mode = SHUTTLE_ENDGAME
@@ -553,7 +553,7 @@
 	mode = SHUTTLE_ESCAPE
 	launch_status = ENDGAME_LAUNCHED
 	setTimer(SSshuttle.emergencyEscapeTime)
-	priority_announce("The Emergency Shuttle is preparing for direct jump. Estimate [timeLeft(600)] minutes until the shuttle docks at Central Command.", null, null, "Priority")
+	priority_announce("Аварийный шаттл готовится к прыжку. Оцениваем [timeLeft(600)] минут до стыковки с центральным командованием.", null, null, "Приоритетное")
 
 
 /obj/docking_port/mobile/pod

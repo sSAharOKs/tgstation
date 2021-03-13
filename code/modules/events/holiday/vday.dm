@@ -49,7 +49,7 @@
 	lover.mind.add_antag_datum(V) //These really should be teams but i can't be assed to incorporate third wheels right now
 
 /datum/round_event/valentines/announce(fake)
-	priority_announce("It's Valentine's Day! Give a valentine to that special someone!")
+	priority_announce("Сегодня же День Святого Валентина! Подари валентинку эту кому-нибудь!")
 
 /obj/item/valentine
 	name = "valentine"

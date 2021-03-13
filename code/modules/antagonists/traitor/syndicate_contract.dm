@@ -133,8 +133,8 @@
 			else
 				D.adjust_money(-points_to_check)
 
-			priority_announce("One of your crew was captured by a rival organisation - we've needed to pay their ransom to bring them back. \
-							As is policy we've taken a portion of the station's funds to offset the overall cost.", null, null, null, "Nanotrasen Asset Protection")
+			priority_announce("Один из членов вашей команды был захвачен конкурирующей организацией - вам прийдётся заплатить выкуп, чтобы вернуть его. \
+							В соответствии с политикой мы взяли часть средств станции, чтобы компенсировать общую стоимость.", null, null, null, "Защита активов Нанотразен")
 
 			sleep(30)
 

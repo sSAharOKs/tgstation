@@ -22,7 +22,7 @@
 /datum/job/quartermaster/announce(mob/living/carbon/human/H, announce_captaincy = FALSE)
 	..()
 	if(announce_captaincy)
-		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Due to extreme staffing shortages, newly promoted Acting Captain [H.real_name] on deck!"))
+		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Из-за нехватки персонала недавно назначенный исполняющий обязанности капитана [H.real_name] на палубе!"))
 
 	family_heirlooms = list(/obj/item/stamp, /obj/item/stamp/denied)
 

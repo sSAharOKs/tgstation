@@ -535,16 +535,16 @@
 		playsound(user.loc, 'sound/effects/glassbr1.ogg', 50, TRUE)
 		var/static/list/curses
 		if(!curses)
-			curses = list("A fuel technician just slit his own throat and begged for death.",
-			"The shuttle's navigation programming was replaced by a file containing just two words: IT COMES.",
-			"The shuttle's custodian was found washing the windows with their own blood.",
-			"A shuttle engineer began screaming 'DEATH IS NOT THE END' and ripped out wires until an arc flash seared off her flesh.",
-			"A shuttle inspector started laughing madly over the radio and then threw herself into an engine turbine.",
-			"The shuttle dispatcher was found dead with bloody symbols carved into their flesh.",
-			"The shuttle's transponder is emitting the encoded message 'FEAR THE OLD BLOOD' in lieu of its assigned identification signal.")
+			curses = list("Топливный техник умоляя о смерти только что перерезал себе горло.",
+			"Навигационное программирование шаттла было заменено файлом, содержащим всего два слова: ОНО ИДЕТ.",
+			"Сторожа шаттла нашли моющим окна их собственной кровью.",
+			"Инженер шаттла начал кричать: 'СМЕРТЬ ЭТО ЕЩЕ НЕ КОНЕЦ' и рвал провода, пока дуговая вспышка не опалила ее плоть.",
+			"Инспектор шаттла начал безумно хохотать по радио, а затем бросился в турбину двигателя.",
+			"Диспетчер шаттла был найден мертвым с кровавыми символами, вырезанными на его плоти.",
+			"Транспондер шаттла издает закодированное сообщение 'БОЙСЯ СТАРОЙ КРОВИ' вместо назначенного опознавательного сигнала.")
 		var/message = pick_n_take(curses)
 		message += " The shuttle will be delayed by three minutes."
-		priority_announce("[message]", "System Failure", 'sound/misc/notice1.ogg')
+		priority_announce("[message]", "Системная ошибка", 'sound/misc/notice1.ogg')
 		if(MAX_SHUTTLE_CURSES-totalcurses <= 0)
 			to_chat(user, "<span class='danger'><span class='big'>You sense that the emergency escape shuttle can no longer be cursed. It would be unwise to create more cursed orbs.</span></span>")
 		else if(MAX_SHUTTLE_CURSES-totalcurses == 1)

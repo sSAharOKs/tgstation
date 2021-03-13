@@ -13,7 +13,7 @@
 NOTE: there are two lists of areas in the end of this file: centcom and station itself. Please maintain these lists valid. --rastaf0
 
 */
-
+//Нашёл фаил с именами, нужно проверить, сломается ли что-нить от изменений...
 
 /*-----------------------------------------------------------------------------*/
 
