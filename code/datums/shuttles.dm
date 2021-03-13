@@ -307,10 +307,10 @@
 	suffix = "clown"
 	name = "СнэпПоп(tm)!"
 	description = "Эй, дети и взрослые! \
-    Вам надоели СКУЧНЫЕ и УТОМИТЕЛЬНЫЕ шаттлы после того, как вы эвакуируетесь по, вероятно, СКУЧНЫМ причинам. Ну тогда закажите Snap pop(tm) сегодня! \
-    У нас есть веселые развлечения для всех, кокпит с полным доступом и никакого скучного брига безопасности! Бу! Играйте в одевалки со своими друзьями! \
-    Соберите все простыни, прежде чем это сделает ваш сосед! Проверьте, наблюдает ли за вами ИИ с помощью нашего патента 'Детектор ИИ мистера пипина' или сокращенно PEEEEEETUR. \
-    Веселой вам поездки!"
+	Вам надоели СКУЧНЫЕ и УТОМИТЕЛЬНЫЕ шаттлы после того, как вы эвакуируетесь по, вероятно, СКУЧНЫМ причинам. Ну тогда закажите Snap pop(tm) сегодня! \
+	У нас есть веселые развлечения для всех, кокпит с полным доступом и никакого скучного брига безопасности! Бу! Играйте в одевалки со своими друзьями! \
+	Соберите все простыни, прежде чем это сделает ваш сосед! Проверьте, наблюдает ли за вами ИИ с помощью нашего патента 'Детектор ИИ мистера пипина' или сокращенно PEEEEEETUR. \
+	Веселой вам поездки!"
 	admin_notes = "Brig is replaced by anchored greentext book surrounded by lavaland chasms, stationside door has been removed to prevent accidental dropping. No brig."
 	credit_cost = CARGO_CRATE_VALUE * 16
 
@@ -325,19 +325,19 @@
 
 /datum/map_template/shuttle/emergency/meta
 	suffix = "meta"
-	name = "Эвакуационный шаттл мета-станции"
+	name = "Эвакуационный шаттл Meta Station"
 	credit_cost = CARGO_CRATE_VALUE * 8
 	description = "Довольно стандартный шаттл, хотя и больше и немного лучше оборудован, чем вариант с Бокс станции."
 
 /datum/map_template/shuttle/emergency/kilo
 	suffix = "kilo"
-	name = "Эвакуационный шаттл килло-станции"
+	name = "Эвакуационный шаттл Kilo Station"
 	credit_cost = CARGO_CRATE_VALUE * 10
 	description = "Полностью функциональный транспортник, включающий в себя полный лазарет, складские помещения и обычные удобства."
 
 /datum/map_template/shuttle/emergency/mini
 	suffix = "mini"
-	name = "Эвакуационный шаттл мини-станции"
+	name = "Эвакуационный шаттл Kilo Station"
 	credit_cost = CARGO_CRATE_VALUE * 2
 	description = "Despite its namesake, this shuttle is actually only slightly smaller than standard, and still complete with a brig and medbay."
 
@@ -362,14 +362,14 @@
 
 /datum/map_template/shuttle/emergency/pubby
 	suffix = "pubby"
-	name = "Эвакуационный шаттл пубби-станции"
+	name = "Эвакуационный шаттл Pubby Station"
 	description = "Поезд но в космосе! В комплекте с первым, вторым классом, бригом и складским помещением."
 	admin_notes = "Choo choo motherfucker!"
 	credit_cost = CARGO_CRATE_VALUE * 2
 
 /datum/map_template/shuttle/emergency/cere
 	suffix = "cere"
-	name = "Эвакуационный шаттл сере-станции"
+	name = "Эвакуационный шаттл Cere Station"
 	description = "Большая, усиленная версия стандартного шаттла. Включает в себя расширенный бриг, полностью укомплектованный медбей, расширенное хранилище грузов с зарядными устройствами для мехов, \
 	машинное отделение, заполненное различными припасами, может вместить более 80 человек экипажа если постараться. Живи на широкую ногу, живи Здесь."
 	admin_notes = "Seriously big, even larger than the Delta shuttle."
@@ -401,7 +401,7 @@
 /datum/map_template/shuttle/emergency/goon
 	suffix = "goon"
 	name = "ПАША а-ля НТ"
-	description = "Порт аварийного шаттла а-ля Нанотразен(сокращенно ПАША Port) - это шаттл, используемый на других менее известных объектах Нанотразен и имеющий более открытую внутреннюю часть для больших толп, но имеет меньшее количество бортовых объектов шаттла."
+	description = "Порт аварийного шаттла а-ля Нанотразен(сокращенно ПАША Port) - это шаттл, используемый на других менее известных объектах Нанотразен и имеющий более открытую внутреннюю часть для больших толп, но имеет меньшее количество бортовых объектов и устройств."
 	credit_cost = CARGO_CRATE_VALUE
 
 /datum/map_template/shuttle/emergency/rollerdome
@@ -444,7 +444,7 @@
 /datum/map_template/shuttle/ferry/base
 	suffix = "base"
 	name = "транспортный паром"
-	description = "Стандартный паром Бокс/Мета-станции."
+	description = "Стандартный паром Box/Metastation."
 
 /datum/map_template/shuttle/ferry/meat
 	suffix = "meat"
@@ -457,9 +457,9 @@
 /datum/map_template/shuttle/ferry/lighthouse
 	suffix = "lighthouse"
 	name = "Маяк(?)"
-	description = "*статика*... часть гораздо большего судна, возможно военного происхождения. \
-	Маркировка оружия-это не то, что мы видели ...статика... почти никогда один и тот же человек дважды, возможное использование неизвестного хранилища ...статика... \
-	вижу офицеров ЭРТ на борту, но никаких заданий в досье нет ...статика...статика...раздражающий звон... только на МАЯКЕ! \
+	description = "*помехи*... часть гораздо большего судна, возможно военного происхождения. \
+	Маркировка оружия-это не то, что мы видели ...помехи... почти никогда один и тот же человек дважды, возможное использование неизвестного хранилища ...помехи... \
+	вижу офицеров ЭРТ на борту, но никаких заданий в досье нет ...помехи...помехи...раздражающий звон... только на МАЯКЕ! \
 	Удовлетворяет все потребности, о существовании которых вы даже не подозревали. У нас есть ВСЕ, и еще кое-что!"
 	admin_notes = "Currently larger than ferry docking port on Box, will not hit anything, but must be force docked. Trader and ERT bodyguards are not included."
 
@@ -523,7 +523,7 @@
 
 /datum/map_template/shuttle/emergency/delta
 	suffix = "delta"
-	name = "Аварийный шаттл дельта станции"
+	name = "Аварийный шаттл Delta Station"
 	description = "Большой шаттл для большой станции.. этот шаттл может с комфортом удовлетворить все ваши потребности в перенаселении и скученности. В комплекте со всеми удобствами плюс дополнительное оборудование."
 	admin_notes = "Go big or go home."
 	credit_cost = CARGO_CRATE_VALUE * 15
