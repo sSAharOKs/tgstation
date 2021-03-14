@@ -20,7 +20,7 @@
 	var/dispatched = FALSE
 	var/dispatch_type = 0
 	var/bonus_points = 10000
-	var/thanks_msg = "The cargo shuttle should return in five minutes. Have some supply points for your trouble."
+	var/thanks_msg = "Грузовой шаттл должен вернуться через пять минут. Вот вам немного карго поинтов за вашу проблему."
 	var/loan_type //for logging
 
 /datum/round_event/shuttle_loan/setup()
@@ -54,7 +54,7 @@
 			bonus_points = 45000 //If you mess up, people die and the shuttle gets turned into swiss cheese
 
 /datum/round_event/shuttle_loan/proc/loan_shuttle()
-	priority_announce(thanks_msg, "Грузовой шаттл был конфискован Центкомом")
+	priority_announce(thanks_msg, "Грузовой шаттл был перехвачен Центкомом")
 
 	dispatched = TRUE
 	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
