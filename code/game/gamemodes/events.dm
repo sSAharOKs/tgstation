@@ -54,7 +54,7 @@
 
 /proc/power_restore_quick()
 
-	priority_announce("Все СМЕСы на [station_name()] были подзаряжены. Приносим свои извинения за причиненные неудобства.", "Системы электроснабжения в порядке", ANNOUNCER_POWERON)
+	priority_announce("Все СМЕСы на [station_name()] были перезаряженны. Приносим свои извинения за причиненные неудобства.", "Системы электроснабжения в порядке", ANNOUNCER_POWERON)
 	for(var/obj/machinery/power/smes/S in GLOB.machines)
 		if(!is_station_level(S.z))
 			continue

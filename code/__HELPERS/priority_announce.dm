@@ -9,16 +9,16 @@
 		sound = SSstation.announcer.event_sounds[sound]
 
 	if(type == "Priority")
-		announcement += "<h1 class='alert'>Приоритетное объявление</h1>"
+		announcement += "<h1 class='alert'>Важное объявление</h1>"
 		if (title && length(title) > 0)
 			announcement += "<br><h2 class='alert'>[html_encode(title)]</h2>"
 	else if(type == "Captain")
-		announcement += "<h1 class='alert'>Капитан Объявляет</h1>"
+		announcement += "<h1 class='alert'>Капитан Сообщает</h1>"
 		GLOB.news_network.SubmitArticle(html_encode(text), "Captain's Announcement", "Station Announcements", null)
 
 	else
 		if(!sender_override)
-			announcement += "<h1 class='alert'>[command_name()] объявляет</h1>"
+			announcement += "<h1 class='alert'>[command_name()] Сообщает</h1>"
 		else
 			announcement += "<h1 class='alert'>[sender_override]</h1>"
 		if (title && length(title) > 0)
@@ -26,9 +26,9 @@
 
 		if(!sender_override)
 			if(title == "")
-				GLOB.news_network.SubmitArticle(text, "Объявление центрального командования", "Объявление станции", null)
+				GLOB.news_network.SubmitArticle(text, "Новости центрального командования", "station announcement", null)
 			else
-				GLOB.news_network.SubmitArticle(title + "<br><br>" + text, "Капитан", "Объявление станции", null)
+				GLOB.news_network.SubmitArticle(title + "<br><br>" + text, "Captain", "station announcement", null)
 
 	///If the announcer overrides alert messages, use that message.
 	if(SSstation.announcer.custom_alert_message && !has_important_message)
@@ -49,7 +49,7 @@
 		title = "Classified [command_name()] Update"
 
 	if(announce)
-		priority_announce("Отчет был загружен и распечатан на всех консолях связи.", "Входящее Секретное Сообщение", SSstation.announcer.get_rand_report_sound(), has_important_message = TRUE)
+		priority_announce("Отчет был загружен и распечатан на коммуникационных консолях.", "Входящее Зашифрованное Сообщение", SSstation.announcer.get_rand_report_sound(), has_important_message = TRUE)
 
 	var/datum/comm_message/M  = new
 	M.title = title

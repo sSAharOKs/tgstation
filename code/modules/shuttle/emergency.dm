@@ -358,7 +358,7 @@
 		SSshuttle.emergencyLastCallLoc = signalOrigin
 	else
 		SSshuttle.emergencyLastCallLoc = null
-	priority_announce("Эвакуационный шаттл отозван.[SSshuttle.emergencyLastCallLoc ? " Сигнал отзыва прослежен. Результаты можно просмотреть на любой коммуникационной консоли." : "" ]", null, ANNOUNCER_SHUTTLERECALLED, "Приоритетное")
+	priority_announce("Эвакуационный шаттл отозван.[SSshuttle.emergencyLastCallLoc ? " Сигнал отзыва прослежен. Результаты можно просмотреть на любой коммуникационной консоли." : "" ]", null, ANNOUNCER_SHUTTLERECALLED, "Важное объявление")
 
 	SSticker.emergency_reason = null
 
@@ -447,7 +447,7 @@
 				mode = SHUTTLE_DOCKED
 				setTimer(SSshuttle.emergencyDockTime)
 				send2adminchat("Server", "The Emergency Shuttle has docked with the station.")
-				priority_announce("[SSshuttle.emergency] состыковался со станцией. У вас есть [timeLeft(600)] минут для посадки на шаттл", null, ANNOUNCER_SHUTTLEDOCK, "Приоритетное")
+				priority_announce("[SSshuttle.emergency] состыковался со станцией. У вас есть [timeLeft(600)] минут для посадки на шаттл", null, ANNOUNCER_SHUTTLEDOCK, "Важное")
 				ShuttleDBStuff()
 
 
@@ -498,7 +498,7 @@
 				mode = SHUTTLE_ESCAPE
 				launch_status = ENDGAME_LAUNCHED
 				setTimer(SSshuttle.emergencyEscapeTime * engine_coeff)
-				priority_announce("Эвакуационный шаттл покинул станцию. Оцениваем [timeLeft(600)] минут до стыковки шаттла у Центрального командования.", null, null, "Приоритетное")
+				priority_announce("Эвакуационный шаттл покинул станцию. Оцениваем [timeLeft(600)] минут до стыковки шаттла у Центрального командования.", null, null, "Важное")
 				INVOKE_ASYNC(SSticker, /datum/controller/subsystem/ticker.proc/poll_hearts)
 				SSmapping.mapvote() //If no map vote has been run yet, start one.
 
@@ -553,7 +553,7 @@
 	mode = SHUTTLE_ESCAPE
 	launch_status = ENDGAME_LAUNCHED
 	setTimer(SSshuttle.emergencyEscapeTime)
-	priority_announce("Аварийный шаттл готовится к прыжку. Оцениваем [timeLeft(600)] минут до стыковки с центральным командованием.", null, null, "Приоритетное")
+	priority_announce("Аварийный шаттл готовится к прыжку. Оцениваем [timeLeft(600)] минут до стыковки с центральным командованием.", null, null, "Важное")
 
 
 /obj/docking_port/mobile/pod

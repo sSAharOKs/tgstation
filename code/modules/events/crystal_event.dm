@@ -165,7 +165,7 @@ This section is for the event controller
 	sound_to_playing_players('sound/misc/notice1.ogg')
 
 /datum/round_event/crystal_invasion/announce(fake)
-	priority_announce("ВНИМАНИЕ - Обнаружена дестабилизация Кристаллической матрицы СуперМатерии, пожалуйста, приготовьтесь и ждите дальнейших инструкций.", "Тревога")
+	priority_announce("ВНИМАНИЕ - Обнаружена дестабилизация Кристаллической матрицы Суперматерии, пожалуйста, приготовьтесь и ждите дальнейших инструкций.", "Тревога")
 	sound_to_playing_players('sound/misc/notice1.ogg')
 
 ///Choose the type of the wave
@@ -437,7 +437,7 @@ This section is for the destabilized SM
 	for(var/find_portal in GLOB.crystal_portals)
 		var/obj/structure/crystal_portal/portal = find_portal
 		portal.modify_component()
-	priority_announce("Жертва члена экипажа (надеемся, клоуна), похоже, ослабила порталы и замедлила количество монстров, проходящих через них!")
+	priority_announce("Жертва члена экипажа (надеемся, клоуна), похоже, ослабила порталы и замедлила поток монстров, проходящих через них!")
 	sound_to_playing_players('sound/misc/notice2.ogg')
 
 /*

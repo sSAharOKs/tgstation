@@ -166,11 +166,11 @@
 		var/announcement_pick = rand(0, 1)
 		switch(announcement_pick)
 			if(0)
-				priority_announce("Внимание экипаж, похоже, что кто-то на вашей станции неожиданно связался с инопланетным устройством недалеко от станции.", "[command_name()] Приоритетное Объявление")
+				priority_announce("Внимание экипаж, похоже, что кто-то на вашей станции неожиданно связался с инопланетным устройством недалеко от станции.", "[command_name()] Важное Объявление")
 				var/datum/round_event_control/spawn_swarmer/swarmer_event = new/datum/round_event_control/spawn_swarmer
 				swarmer_event.runEvent()
 			if(1)
-				priority_announce("Внимание экипаж, похоже, что кто-то на вашей станции неожиданно связался с инопланетным устройством недалеко от станции.", "[command_name()] Приоритетное Объявление")
+				priority_announce("Внимание экипаж, похоже, что кто-то на вашей станции неожиданно связался с инопланетным устройством недалеко от станции.", "[command_name()] Важное Объявление")
 				var/datum/round_event_control/pirates/pirate_event = new/datum/round_event_control/pirates
 				pirate_event.runEvent()
 		ninja_gloves.communication_console_hack_success = TRUE

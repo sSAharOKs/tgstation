@@ -556,7 +556,7 @@
 	playsound(S, 'sound/magic/ethereal_exit.ogg', 50, TRUE, -1)
 	message_admins("[ADMIN_LOOKUPFLW(S)] has been made into a Space Dragon by the midround ruleset.")
 	log_game("DYNAMIC: [key_name(S)] was spawned as a Space Dragon by the midround ruleset.")
-	priority_announce("Большой поток органической энергии был зарегистрирован вблизи [station_name()], пожалуйста,приготовьтесь.", "Неопознаные признаки жизни")
+	priority_announce("Большой поток органической энергии был зарегистрирован вблизи [station_name()], пожалуйста, приготовьтесь.", "Неопознаные признаки жизни")
 	return S
 
 //////////////////////////////////////////////
