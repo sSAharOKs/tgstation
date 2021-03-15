@@ -553,7 +553,7 @@
 	mode = SHUTTLE_ESCAPE
 	launch_status = ENDGAME_LAUNCHED
 	setTimer(SSshuttle.emergencyEscapeTime)
-	priority_announce("Аварийный шаттл готовится к прыжку. Оцениваем [timeLeft(600)] минут до стыковки с центральным командованием.", null, null, "Важное")
+	priority_announce("Аварийный шаттл готовится к прыжку. Оцениваем [timeLeft(600)] минут(ы) до стыковки с центральным командованием.", null, null, "Важное")
 
 
 /obj/docking_port/mobile/pod
