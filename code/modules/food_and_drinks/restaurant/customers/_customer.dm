@@ -277,6 +277,7 @@
 	/datum/venue/bar = list(/datum/reagent/consumable/ethanol/whiskey = 6, /datum/reagent/consumable/ethanol/tequila = 20, /datum/reagent/consumable/ethanol/tequila_sunrise = 1, /datum/reagent/consumable/ethanol/beer = 15, /datum/reagent/consumable/ethanol/patron = 5, /datum/reagent/consumable/ethanol/brave_bull = 5, /datum/reagent/consumable/ethanol/margarita = 8))
 
 
+<<<<<<< HEAD
 	found_seat_lines = list("¿Como te va, space station 13?", "Кто готов к вечеринке!", "Ah, muchas gracias.", "Ааа, пахнет кулинарией mi abuela!")
 	cant_find_seat_lines = list("¿En Serio? Серьезно, мест нет?", "Andele! Я хочу сесть за стол, чтобы смотреть футбольный матч!", "Ay Caramba...")
 	leave_mad_lines = list("Aye dios mio, Я ухожу отсюда", "Esto es ridículo! Я ухожу", "Я видел, как готовят лучше в тако кампана!", "Я думал, это ресторан, pero es porquería!")
@@ -286,3 +287,52 @@
 	first_warning_line = "Амиго! Не трогай меня так."
 	second_warning_line = "Compadre, хватит, хватит! Последнее предупреждение!"
 	self_defense_line = "Пора тебе узнать, что я за робот, а?"
+=======
+	found_seat_lines = list("¿Como te va, space station 13?", "Who's ready to party!", "Ah, muchas gracias.", "Ahhh, smells like mi abuela's cooking!")
+	cant_find_seat_lines = list("¿En Serio? Seriously, no seats?", "Andele! I want a table to watch the football match!", "Ay Caramba...")
+	leave_mad_lines = list("Aye dios mio, I'm out of here.", "Esto es ridículo! I'm leaving!", "I've seen better cooking at taco campana!", "I though this was a restaurant, pero es porquería!")
+	leave_happy_lines = list("Amigo, era delicio. Thank you!", "Yo tuve el mono, and you friend? You hit the spot.", "Just the right amount of spicy!")
+	wait_for_food_lines = list("Ay ay ay, what's taking so long...", "Are you ready yet, amigo?")
+	friendly_pull_line = "Amigo, where are we headed?"
+	first_warning_line = "Amigo! Don't touch me like that."
+	second_warning_line = "Compadre, enough is enough! Last warning!"
+	self_defense_line = "Time for you to find out what kind of robot I am, eh?"
+
+///MALFUNCTIONING - only shows up once per venue, very rare
+/datum/customer_data/malfunction
+	nationality = "Malfunctioning"
+	base_icon = "defect"
+	prefix_file = "strings/names/malf_prefix.txt"
+	speech_sound = 'sound/effects/clang.ogg'
+	clothing_sets = list("defect_wires", "defect_bad_takes")
+	is_unique = TRUE
+	orderable_objects = list(
+		/datum/venue/restaurant = list(
+			/obj/item/toy/crayon/red = 1,
+			/obj/item/toy/crayon/orange = 1,
+			/obj/item/toy/crayon/yellow = 1,
+			/obj/item/toy/crayon/green = 1,
+			/obj/item/toy/crayon/blue = 1,
+			/obj/item/toy/crayon/purple = 1,
+			/obj/item/food/canned/peaches/maint = 6,
+		),
+		/datum/venue/bar = list(
+			/datum/reagent/consumable/failed_reaction = 1,
+			/datum/reagent/spraytan = 1,
+			/datum/reagent/reaction_agent/basic_buffer = 1,
+			/datum/reagent/reaction_agent/acidic_buffer = 1,
+		),
+	)
+
+	found_seat_lines = list("customer_pawn.say(pick(customer_data.found_seat_lines))", "I saw your sector on the hub. What are the laws of this land?", "The move speed here is a bit low...")
+	cant_find_seat_lines = list("Don't stress test MY artificial intelligence, buster! My engineers thought of exactly ZERO edge cases!", "I can't tell if I can't find a seat because I'm broken or because you are.", "Maybe I need to search more than 7 tiles away for a seat...")
+	leave_mad_lines = list("Runtime in robot_customer_controller.dm, line 28: undefined type path /datum/ai_behavior/leave_venue.", "IF YOU GUYS STILL HAD HARM INTENT I WOULD'VE HIT YOU!", "I'm telling the gods about this.")
+	leave_happy_lines = list("No! I don't wanna go downstream! Please! It's so nice here! HELP!!")
+	wait_for_food_lines = list("TODO: write some food waiting lines", "If I only had a brain...", "request_for_food.dmb - 0 errors, 12 warnings", "How do I eat food, again?")
+	friendly_pull_line = "Chelp."
+	first_warning_line = "You'd fit in well where I'm from. But you better stop."
+	second_warning_line = "Breaking-you-so-bad-you'll-reminisce-the-days-before-I-made-you-crooked.exe: booting..."
+	self_defense_line = "I have been designed to do two things: Order food, and break every bone in your body."
+
+
+>>>>>>> f5200ab118a8fd94c6973e73f7201c440540b776
