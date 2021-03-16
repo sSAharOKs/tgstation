@@ -276,8 +276,6 @@
 	/datum/venue/restaurant = list(/obj/item/food/taco/plain = 25, /obj/item/food/taco = 15 , /obj/item/food/burrito = 15, /obj/item/food/fuegoburrito = 1, /obj/item/food/cheesyburrito = 4, /obj/item/food/nachos = 10, /obj/item/food/cheesynachos = 6, /obj/item/food/pie/dulcedebatata = 2, /obj/item/food/cubannachos = 3, /obj/item/food/stuffedlegion = 1),
 	/datum/venue/bar = list(/datum/reagent/consumable/ethanol/whiskey = 6, /datum/reagent/consumable/ethanol/tequila = 20, /datum/reagent/consumable/ethanol/tequila_sunrise = 1, /datum/reagent/consumable/ethanol/beer = 15, /datum/reagent/consumable/ethanol/patron = 5, /datum/reagent/consumable/ethanol/brave_bull = 5, /datum/reagent/consumable/ethanol/margarita = 8))
 
-
-<<<<<<< HEAD
 	found_seat_lines = list("¿Como te va, space station 13?", "Кто готов к вечеринке!", "Ah, muchas gracias.", "Ааа, пахнет кулинарией mi abuela!")
 	cant_find_seat_lines = list("¿En Serio? Серьезно, мест нет?", "Andele! Я хочу сесть за стол, чтобы смотреть футбольный матч!", "Ay Caramba...")
 	leave_mad_lines = list("Aye dios mio, Я ухожу отсюда", "Esto es ridículo! Я ухожу", "Я видел, как готовят лучше в тако кампана!", "Я думал, это ресторан, pero es porquería!")
@@ -287,16 +285,6 @@
 	first_warning_line = "Амиго! Не трогай меня так."
 	second_warning_line = "Compadre, хватит, хватит! Последнее предупреждение!"
 	self_defense_line = "Пора тебе узнать, что я за робот, а?"
-=======
-	found_seat_lines = list("¿Como te va, space station 13?", "Who's ready to party!", "Ah, muchas gracias.", "Ahhh, smells like mi abuela's cooking!")
-	cant_find_seat_lines = list("¿En Serio? Seriously, no seats?", "Andele! I want a table to watch the football match!", "Ay Caramba...")
-	leave_mad_lines = list("Aye dios mio, I'm out of here.", "Esto es ridículo! I'm leaving!", "I've seen better cooking at taco campana!", "I though this was a restaurant, pero es porquería!")
-	leave_happy_lines = list("Amigo, era delicio. Thank you!", "Yo tuve el mono, and you friend? You hit the spot.", "Just the right amount of spicy!")
-	wait_for_food_lines = list("Ay ay ay, what's taking so long...", "Are you ready yet, amigo?")
-	friendly_pull_line = "Amigo, where are we headed?"
-	first_warning_line = "Amigo! Don't touch me like that."
-	second_warning_line = "Compadre, enough is enough! Last warning!"
-	self_defense_line = "Time for you to find out what kind of robot I am, eh?"
 
 ///MALFUNCTIONING - only shows up once per venue, very rare
 /datum/customer_data/malfunction
@@ -324,15 +312,14 @@
 		),
 	)
 
-	found_seat_lines = list("customer_pawn.say(pick(customer_data.found_seat_lines))", "I saw your sector on the hub. What are the laws of this land?", "The move speed here is a bit low...")
-	cant_find_seat_lines = list("Don't stress test MY artificial intelligence, buster! My engineers thought of exactly ZERO edge cases!", "I can't tell if I can't find a seat because I'm broken or because you are.", "Maybe I need to search more than 7 tiles away for a seat...")
-	leave_mad_lines = list("Runtime in robot_customer_controller.dm, line 28: undefined type path /datum/ai_behavior/leave_venue.", "IF YOU GUYS STILL HAD HARM INTENT I WOULD'VE HIT YOU!", "I'm telling the gods about this.")
+	found_seat_lines = list("customer_pawn.say(pick(customer_data.found_seat_lines))", "Я видел ваш сектор на хабе. Каковы законы этой страны?", "Скорость передвижения здесь немного низкая...")
+	cant_find_seat_lines = list("Не испытывай МОЙ искусственный интеллект, парень! Мои инженеры придумали ровно НОЛЬ крайних случаев!", "Не могу сказать, не могу ли я найти место, потому что я сломался, или потому, что сломался ты.", "Может, мне нужно поискать место более чем в 7 плитках отсюда...")
+	leave_mad_lines = list("Runtime in robot_customer_controller.dm, line 28: undefined type path /datum/ai_behavior/leave_venue.", "ЕСЛИ БЫ У ВАС, РЕБЯТА, ВСЕ ЕЩЕ БЫЛИ ЗЛЫЕ НАМЕРЕНИЯ, Я БЫ ВАС УДАРИЛ!", "Я молюсь об этом богам.")
 	leave_happy_lines = list("No! I don't wanna go downstream! Please! It's so nice here! HELP!!")
-	wait_for_food_lines = list("TODO: write some food waiting lines", "If I only had a brain...", "request_for_food.dmb - 0 errors, 12 warnings", "How do I eat food, again?")
+	wait_for_food_lines = list("TODO: write some food waiting lines", "Если бы у меня был только мозг ...", "request_for_food.dmb - 0 errors, 12 warnings", "Как мне снова есть пищу?")
 	friendly_pull_line = "Chelp."
-	first_warning_line = "You'd fit in well where I'm from. But you better stop."
-	second_warning_line = "Breaking-you-so-bad-you'll-reminisce-the-days-before-I-made-you-crooked.exe: booting..."
-	self_defense_line = "I have been designed to do two things: Order food, and break every bone in your body."
+	first_warning_line = "Вы бы хорошо прижились там, откуда я родом. Но тебе лучше остановиться."
+	second_warning_line = "Сломать-вас-так-сильно-что-вы-будете-вспоминать-те-дни-когда-я-сделал-с-вами-это.exe: Загрузка..."
+	self_defense_line = "Я был создан, чтобы делать две вещи: заказывать еду и ломать все кости в вашем теле."
 
 
->>>>>>> f5200ab118a8fd94c6973e73f7201c440540b776
