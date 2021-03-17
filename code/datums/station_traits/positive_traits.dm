@@ -3,11 +3,11 @@
 
 
 /datum/station_trait/lucky_winner
-	name = "Lucky winner"
+	name = "Счастливчик"
 	trait_type = STATION_TRAIT_POSITIVE
 	weight = 1
 	show_in_report = TRUE
-	report_message = "Your station has won the grand prize of the annual station charity event. Free snacks will be delivered to the bar every now and then."
+	report_message = "Ваша станция выиграла главный приз ежегодной благотворительной акции. Время от времени в бар будут доставляться бесплатные закуски."
 	trait_processes = TRUE
 	COOLDOWN_DECLARE(party_cooldown)
 
@@ -32,40 +32,40 @@
 	new /obj/effect/pod_landingzone(T, toLaunch)
 
 /datum/station_trait/galactic_grant
-	name = "Galactic grant"
+	name = "Галактический грант"
 	trait_type = STATION_TRAIT_POSITIVE
 	weight = 5
 	show_in_report = TRUE
-	report_message = "Your station has been selected for a special grant. Some extra funds has been made available to your cargo department."
+	report_message = "Ваша станция была выбрана для получения специального гранта. Вашему грузовому отделу были предоставлены дополнительные средства."
 
 /datum/station_trait/galactic_grant/on_round_start()
 	var/datum/bank_account/cargo_bank = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	cargo_bank.adjust_money(rand(2000, 5000))
 
 /datum/station_trait/premium_internals_box
-	name = "Premium internals boxes"
+	name = "Коробки с оборудованием для дыхания премиум-класса"
 	trait_type = STATION_TRAIT_POSITIVE
 	weight = 10
 	show_in_report = TRUE
-	report_message = "The internals boxes for your crew have been filled with bonus equipment."
+	report_message = "Вашему персоналу были выданы коробки с оборудованием для дыхания премиум-класса"
 	trait_to_give = STATION_TRAIT_PREMIUM_INTERNALS
 
 /datum/station_trait/bountiful_bounties
-	name = "Bountiful bounties"
+	name = "Щедрые баунти"
 	trait_type = STATION_TRAIT_POSITIVE
 	weight = 5
 	show_in_report = TRUE
-	report_message = "It seems collectors in this system are extra keen to on bounties, and will pay more to see their completion."
+	report_message = "Похоже, коллекционеры в этой системе очень заинтересованы в баунти и будут платить больше, чтобы увидеть их завершение."
 
 /datum/station_trait/bountiful_bounties/on_round_start()
 	SSeconomy.bounty_modifier *= 1.2
 
 /datum/station_trait/strong_supply_lines
-	name = "Strong supply lines"
+	name = "Сильные линии снабжения"
 	trait_type = STATION_TRAIT_POSITIVE
 	weight = 5
 	show_in_report = TRUE
-	report_message = "Prices are low in this system, BUY BUY BUY!"
+	report_message = "Цены низкие в этой системе, ПОКУПАТЬ ПОКУПАТЬ ПОКУПАТЬ!"
 	blacklist = list(/datum/station_trait/distant_supply_lines)
 
 
@@ -73,7 +73,7 @@
 	SSeconomy.pack_price_modifier *= 0.8
 
 /datum/station_trait/scarves
-	name = "Scarves"
+	name = "Шарфы"
 	trait_type = STATION_TRAIT_POSITIVE
 	weight = 5
 	show_in_report = TRUE
@@ -82,12 +82,12 @@
 /datum/station_trait/scarves/New()
 	. = ..()
 	report_message = pick(
-		"Nanotrasen is experimenting with seeing if neck warmth improves employee morale.",
-		"After Space Fashion Week, scarves are the hot new accessory.",
-		"Everyone was simultaneously a little bit cold when they packed to go to the station.",
-		"The station is definitely not under attack by neck grappling aliens masquerading as wool. Definitely not.",
-		"You all get free scarves. Don't ask why.",
-		"A shipment of scarves was delivered to the station.",
+		"Нанотразен экспериментирует с тем, чтобы увидеть, улучшает ли тепло шеи моральный дух сотрудников.",
+		"После Недели космической моды шарфы - это новый модный аксессуар.",
+		"Все одновременно немного замерзли, когда собирались на станцию.",
+		"Станция определенно не подвергается атакам пришельцев знающих приём удушения, которые маскируются под шерсть. Точно нет.",
+		"Вы все получаете бесплатные шарфы. Не спрашивайте почему.",
+		"На станцию доставили партию шарфов.",
 	)
 	scarves = typesof(/obj/item/clothing/neck/scarf) + list(
 		/obj/item/clothing/neck/stripedredscarf,
@@ -104,20 +104,20 @@
 	living_mob.equip_to_slot_or_del(new scarf_type(living_mob), ITEM_SLOT_NECK, initial = FALSE)
 
 /datum/station_trait/filled_maint
-	name = "Filled up maintenance"
+	name = "Заполненные теха"
 	trait_type = STATION_TRAIT_POSITIVE
 	weight = 5
 	show_in_report = TRUE
-	report_message = "Our workers accidentaly forgot more of their personal belongings in the maintenace areas."
+	report_message = "Наши рабочие случайно забыли больше своих личных вещей в зонах технического обслуживания."
 	blacklist = list(/datum/station_trait/empty_maint)
 	trait_to_give = STATION_TRAIT_FILLED_MAINT
 
 /datum/station_trait/quick_shuttle
-	name = "Quick Shuttle"
+	name = "Быстрый шаттл"
 	trait_type = STATION_TRAIT_POSITIVE
 	weight = 5
 	show_in_report = TRUE
-	report_message = "Due to proximity to our supply station, the cargo shuttle will have a quicker flight time to your cargo department."
+	report_message = "Благодаря близости к нашей станции снабжения грузовой шаттл будет иметь более быстрое время полета до вашего отдела карго."
 	blacklist = list(/datum/station_trait/slow_shuttle)
 
 /datum/station_trait/quick_shuttle/on_round_start()
@@ -137,10 +137,10 @@
 
 /datum/station_trait/deathrattle_department/New()
 	. = ..()
-	deathrattle_group = new("[department_name] group")
+	deathrattle_group = new("группа [department_name]")
 	blacklist += subtypesof(/datum/station_trait/deathrattle_department) - type //All but ourselves
-	name = "deathrattled [department_name]"
-	report_message = "All members of [department_name] have received an implant to notify each other if one of them dies. This should help improve job-safety!"
+	name = "Имплант предспертного хрипа в [department_name]"
+	report_message = "Все члены [department_name] получили имплантат, чтобы уведомлять друг друга, если один из них умрет. Это должно помочь улучшить безопасность труда!"
 	RegisterSignal(SSdcs, COMSIG_GLOB_JOB_AFTER_SPAWN, .proc/on_job_after_spawn)
 
 /datum/station_trait/deathrattle_department/proc/on_job_after_spawn(datum/source, datum/job/job, mob/living/living_mob, mob/M, joined_late)
@@ -158,56 +158,56 @@
 	trait_flags = NONE
 	weight = 1
 	department_to_apply_to = DEPARTMENT_SERVICE
-	department_name = "Service"
+	department_name = "Сервиса"
 
 /datum/station_trait/deathrattle_department/cargo
 	trait_flags = NONE
 	weight = 1
 	department_to_apply_to = DEPARTMENT_CARGO
-	department_name = "Cargo"
+	department_name = "Карго"
 
 /datum/station_trait/deathrattle_department/engineering
 	trait_flags = NONE
 	weight = 1
 	department_to_apply_to = DEPARTMENT_ENGINEERING
-	department_name = "Engineering"
+	department_name = "Инжинерного отдела"
 
 /datum/station_trait/deathrattle_department/command
 	trait_flags = NONE
 	weight = 1
 	department_to_apply_to = DEPARTMENT_COMMAND
-	department_name = "Command"
+	department_name = "Командования"
 
 /datum/station_trait/deathrattle_department/science
 	trait_flags = NONE
 	weight = 1
 	department_to_apply_to = DEPARTMENT_SCIENCE
-	department_name = "Science"
+	department_name = "Научного отдела"
 
 /datum/station_trait/deathrattle_department/security
 	trait_flags = NONE
 	weight = 1
 	department_to_apply_to = DEPARTMENT_SECURITY
-	department_name = "Security"
+	department_name = "Отдела безопасности"
 
 /datum/station_trait/deathrattle_department/medical
 	trait_flags = NONE
 	weight = 1
 	department_to_apply_to = DEPARTMENT_MEDICAL
-	department_name = "Medical"
+	department_name = "Медицинского отдела"
 
 /datum/station_trait/deathrattle_all
-	name = "deathrattled station"
+	name = "Имплант предсмертного хрипа"
 	trait_type = STATION_TRAIT_POSITIVE
 	show_in_report = TRUE
 	weight = 1
-	report_message = "All members of the station have received an implant to notify each other if one of them dies. This should help improve job-safety!"
+	report_message = "Все члены станции получили имплант, чтобы уведомить друг друга, если один из них умирает. Это должно помочь повысить безопасность труда!"
 	var/datum/deathrattle_group/deathrattle_group
 
 
 /datum/station_trait/deathrattle_all/New()
 	. = ..()
-	deathrattle_group = new("station group")
+	deathrattle_group = new("Станционная группа")
 	blacklist = subtypesof(/datum/station_trait/deathrattle_department)
 	RegisterSignal(SSdcs, COMSIG_GLOB_JOB_AFTER_SPAWN, .proc/on_job_after_spawn)
 

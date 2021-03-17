@@ -45,19 +45,19 @@
 
 
 /datum/station_trait/glitched_pdas
-	name = "PDA glitch"
+	name = "Глюк ПДА"
 	trait_type = STATION_TRAIT_NEUTRAL
 	weight = 15
 	show_in_report = TRUE
-	report_message = "Something seems to be wrong with the PDAs issued to you all this shift. Nothing too bad though."
+	report_message = "Кажется, что-то не так с ПДА, выданными вам на эту смену. Впрочем, ничего страшного."
 	trait_to_give = STATION_TRAIT_PDA_GLITCHED
 
 /datum/station_trait/announcement_intern
-	name = "Announcement Intern"
+	name = "Стажёр"
 	trait_type = STATION_TRAIT_NEUTRAL
 	weight = 1
 	show_in_report = TRUE
-	report_message = "Please be nice to him."
+	report_message = "Пожалуйста, будьте с ним помягче."
 	blacklist = list(/datum/station_trait/announcement_medbot)
 
 /datum/station_trait/announcement_intern/New()
@@ -69,7 +69,7 @@
 	trait_type = STATION_TRAIT_NEUTRAL
 	weight = 1
 	show_in_report = TRUE
-	report_message = "Our announcement system is under scheduled maintanance at the moment. Thankfully, we have a backup."
+	report_message = "В настоящее время наша система оповещения находится на плановом техническом обслуживании. К счастью, у нас есть запасной вариант."
 	blacklist = list(/datum/station_trait/announcement_intern)
 
 /datum/station_trait/announcement_medbot/New()

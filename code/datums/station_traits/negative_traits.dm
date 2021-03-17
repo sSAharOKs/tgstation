@@ -1,37 +1,37 @@
 /datum/station_trait/carp_infestation
-	name = "Carp infestation"
+	name = "Нашествие карпов"
 	trait_type = STATION_TRAIT_NEGATIVE
 	weight = 5
 	show_in_report = TRUE
-	report_message = "Dangerous fauna is present in the area of this station."
+	report_message = "В районе станции присутствует опасная фауна."
 	trait_to_give = STATION_TRAIT_CARP_INFESTATION
 
 /datum/station_trait/distant_supply_lines
-	name = "Distant supply lines"
+	name = "Дальне удалённые линии снабжения"
 	trait_type = STATION_TRAIT_NEGATIVE
 	weight = 3
 	show_in_report = TRUE
-	report_message = "Due to the distance to our normal supply lines, cargo orders are more expensive."
+	report_message = "Из-за удаленности от наших обычных линий снабжения заказы на грузы обходятся дороже."
 	blacklist = list(/datum/station_trait/strong_supply_lines)
 
 /datum/station_trait/distant_supply_lines/on_round_start()
 	SSeconomy.pack_price_modifier *= 1.2
 
 /datum/station_trait/late_arrivals
-	name = "Late Arrivals"
+	name = "Опаздывающие шаттлы прибытия"
 	trait_type = STATION_TRAIT_NEGATIVE
 	weight = 2
 	show_in_report = TRUE
-	report_message = "Sorry for that, we didn't expect to fly into that vomiting goose while bringing you to your new station."
+	report_message = "Извините за это, мы не ожидали, что влетим в этого блюющего гуся, пока везем вас на новую станцию."
 	trait_to_give = STATION_TRAIT_LATE_ARRIVALS
 	blacklist = list(/datum/station_trait/random_spawns, /datum/station_trait/hangover)
 
 /datum/station_trait/random_spawns
-	name = "Drive-by landing"
+	name = "Водитель проехал мимо станции"
 	trait_type = STATION_TRAIT_NEGATIVE
 	weight = 2
 	show_in_report = TRUE
-	report_message = "Sorry for that, we missed your station by a few miles, so we just launched you towards your station in pods. Hope you don't mind!"
+	report_message = "Извините за это, мы пропустили вашу станцию на несколько миль, поэтому мы просто запустили вас к вашей станции в капсулах. Надеюсь, вы не возражаете?"
 	trait_to_give = STATION_TRAIT_RANDOM_ARRIVALS
 	blacklist = list(/datum/station_trait/late_arrivals, /datum/station_trait/hangover)
 
@@ -40,7 +40,7 @@
 	trait_type = STATION_TRAIT_NEGATIVE
 	weight = 2
 	show_in_report = TRUE
-	report_message = "Ohh....Man....That mandatory office party from last shift...God that was awesome..I woke up in some random toilet 3 sectors away..."
+	report_message = "Ох...Блин....Тот обязательный копоратив с прошлой смены...Боже, это было потрясающе..Я проснулся в каком-то случайном туалете в 3 секторах отсюда..."
 	trait_to_give = STATION_TRAIT_HANGOVER
 	blacklist = list(/datum/station_trait/late_arrivals, /datum/station_trait/random_spawns)
 
@@ -59,11 +59,11 @@
 		spawned_mob.equip_to_slot(hat, ITEM_SLOT_HEAD)
 
 /datum/station_trait/blackout
-	name = "Blackout"
+	name = "Тьма-тьмущая"
 	trait_type = STATION_TRAIT_NEGATIVE
 	weight = 3
 	show_in_report = TRUE
-	report_message = "Station lights seem to be damaged, be safe when starting your shift today."
+	report_message = "Свет на станции, кажется, поврежден, будьте в осторожны, начиная свою смену сегодня."
 
 /datum/station_trait/blackout/on_round_start()
 	. = ..()
@@ -73,21 +73,21 @@
 			current_apc.overload_lighting()
 
 /datum/station_trait/empty_maint
-	name = "Cleaned out maintenance"
+	name = "Вычищенные теха"
 	trait_type = STATION_TRAIT_NEGATIVE
 	weight = 5
 	show_in_report = TRUE
-	report_message = "Our workers cleaned out most of the junk in the maintenace areas."
+	report_message = "Наши рабочие вычистили большую часть мусора в зонах технического обслуживания."
 	blacklist = list(/datum/station_trait/filled_maint)
 	trait_to_give = STATION_TRAIT_EMPTY_MAINT
 
 
 /datum/station_trait/overflow_job_bureacracy
-	name = "Overflow bureacracy mistake"
+	name = "Бюрократическая ошибка"
 	trait_type = STATION_TRAIT_NEGATIVE
 	weight = 5
 	show_in_report = TRUE
-	var/list/jobs_to_use = list("Clown", "Bartender", "Cook", "Botanist", "Cargo Technician", "Mime", "Janitor", "Prisoner")
+	var/list/jobs_to_use = list("клоунов", "барменов", "поваров", "ботаников", "карго техников", "мимов", "уборщиков", "зеков")
 	var/chosen_job
 
 /datum/station_trait/overflow_job_bureacracy/New()
@@ -96,18 +96,18 @@
 	RegisterSignal(SSjob, COMSIG_SUBSYSTEM_POST_INITIALIZE, .proc/set_overflow_job_override)
 
 /datum/station_trait/overflow_job_bureacracy/get_report()
-	return "[name] - It seems for some reason we put out the wrong job-listing for the overflow role this shift...I hope you like [chosen_job]s."
+	return "Походу произошла [name]. Список вакансий на эту смену немного неправильный...Я надеюсь, вам понравится куча [chosen_job]."
 
 /datum/station_trait/overflow_job_bureacracy/proc/set_overflow_job_override(datum/source, new_overflow_role)
 	SIGNAL_HANDLER
 	SSjob.set_overflow_role(chosen_job)
 
 /datum/station_trait/slow_shuttle
-	name = "Slow Shuttle"
+	name = "Медленный шаттл"
 	trait_type = STATION_TRAIT_NEUTRAL
 	weight = 5
 	show_in_report = TRUE
-	report_message = "Due to distance to our supply station, the cargo shuttle will have a slower flight time to your cargo department."
+	report_message = "Из-за расстояния до нашей станции снабжения грузовой шаттл будет иметь более медленное время полета до вашего отдела карго."
 	blacklist = list(/datum/station_trait/quick_shuttle)
 
 /datum/station_trait/slow_shuttle/on_round_start()

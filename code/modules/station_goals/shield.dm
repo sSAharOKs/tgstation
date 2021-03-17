@@ -6,10 +6,10 @@
 	var/coverage_goal = 500
 
 /datum/station_goal/station_shield/get_report()
-	return {"The station is located in a zone full of space debris.
-		We have a prototype shielding system you must deploy to reduce collision-related accidents.
+	return {"Станция находится в зоне, заполненной космическим мусором.
+		У нас есть прототип защитной системы, которую вы должны развернуть, чтобы уменьшить количество несчастных случаев, связанных с столкновениями.
 
-		You can order the satellites and control systems at cargo.
+		Вы можете заказать спутники и системы управления в карго.
 		"}
 
 
