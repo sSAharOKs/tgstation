@@ -36,7 +36,7 @@
 	blacklist = list(/datum/station_trait/late_arrivals, /datum/station_trait/hangover)
 
 /datum/station_trait/hangover
-	name = "Hangover"
+	name = "Похмелье"
 	trait_type = STATION_TRAIT_NEGATIVE
 	weight = 2
 	show_in_report = TRUE
@@ -103,13 +103,8 @@
 	SSjob.set_overflow_role(chosen_job)
 
 /datum/station_trait/slow_shuttle
-<<<<<<< HEAD
-	name = "Медленный шаттл"
-	trait_type = STATION_TRAIT_NEUTRAL
-=======
 	name = "Slow Shuttle"
 	trait_type = STATION_TRAIT_NEGATIVE
->>>>>>> 528175b306a60dd2c0dfc9950041e7ff1186e2b1
 	weight = 5
 	show_in_report = TRUE
 	report_message = "Из-за расстояния до нашей станции снабжения грузовой шаттл будет иметь более медленное время полета до вашего отдела карго."
@@ -120,17 +115,17 @@
 	SSshuttle.supply.callTime *= 1.5
 
 /datum/station_trait/bot_languages
-	name = "Bot Language Matrix Malfunction"
+	name = "Неисправность языковой матрицы ботов"
 	trait_type = STATION_TRAIT_NEGATIVE
 	weight = 3
 	show_in_report = TRUE
-	report_message = "Your station's friendly bots have had their language matrix fried due to an event, resulting in some strange and unfamiliar speech patterns."
+	report_message = "Из-за какого-то события у дружественных ботов вашей станции сгорела языковая матрица, что привело к появлению некоторых странных и незнакомых речевых моделей."
 
 /datum/station_trait/bot_languages/New()
 	. = ..()
 	/// What "caused" our robots to go haywire (fluff)
-	var/event_source = pick(list("an ion storm", "a syndicate hacking attempt", "a malfunction", "issues with your onboard AI", "an intern's mistakes", "budget cuts"))
-	report_message = "Your station's friendly bots have had their language matrix fried due to [event_source], resulting in some strange and unfamiliar speech patterns."
+	var/event_source = pick(list("ионного шторма", "попытки взлома синдикатом", "неисправности", "проблем с вашим бортовым ИИ", "ошибки стажера", "сокращения бюджета"))
+	report_message = "Из-за [event_source] у дружественных ботов на вашей станции сгорела языковая матрица, что привело к некоторым странным и незнакомым моделям речи."
 
 /datum/station_trait/bot_languages/on_round_start()
 	. = ..()
