@@ -353,7 +353,7 @@
 			SSjob.safe_code_request_loc = pod_location
 			SSjob.safe_code_requested = TRUE
 			SSjob.safe_code_timer_id = addtimer(CALLBACK(SSjob, /datum/controller/subsystem/job.proc/send_spare_id_safe_code, pod_location), 120 SECONDS, TIMER_UNIQUE | TIMER_STOPPABLE)
-			minor_announce("Due to staff shortages, your station has been approved for delivery of access codes to secure the Captain's Spare ID. Delivery via drop pod at [get_area(pod_location)]. ETA 120 seconds.")
+			minor_announce("Из-за нехватки персонала ваша станция была одобрена для доставки кодов доступа для сейфа с запасной карты капитана. Доставка произойдёт через под и прибудет в [get_area(pod_location)]. Примерное время прибытия 120 секунд.")
 
 /obj/machinery/computer/communications/ui_data(mob/user)
 	var/list/data = list(

@@ -173,7 +173,7 @@
 	if((authorized.len >= auth_need) || (obj_flags & EMAGGED))
 		// shuttle timers use 1/10th seconds internally
 		SSshuttle.emergency.setTimer(ENGINES_START_TIME)
-		var/system_error = obj_flags & EMAGGED ? "SYSTEM ERROR:" : null
+		var/system_error = obj_flags & EMAGGED ? "СИСТЕМНАЯ ОШИБКА:" : null
 		minor_announce("Аварийный шаттл стартует через \
 			[TIME_LEFT] секунд", system_error, alert=TRUE)
 		. = TRUE
@@ -498,7 +498,7 @@
 				mode = SHUTTLE_ESCAPE
 				launch_status = ENDGAME_LAUNCHED
 				setTimer(SSshuttle.emergencyEscapeTime * engine_coeff)
-				priority_announce("Эвакуационный шаттл покинул станцию. Оцениваем [timeLeft(600)] минут до стыковки шаттла у Центрального командования.", null, null, "Важное")
+				priority_announce("Эвакуационный шаттл покинул станцию. Оцениваем [timeLeft(600)] минут(ы) до стыковки шаттла у Центрального командования.", null, null, "Важное")
 				INVOKE_ASYNC(SSticker, /datum/controller/subsystem/ticker.proc/poll_hearts)
 				SSmapping.mapvote() //If no map vote has been run yet, start one.
 
