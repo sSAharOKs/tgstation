@@ -6,11 +6,10 @@
 	name = "Bluespace Artillery"
 
 /datum/station_goal/bluespace_cannon/get_report()
-	return {"Our military presence is inadequate in your sector.
-		We need you to construct BSA-[rand(1,99)] Artillery position aboard your station.
-
-		Base parts are available for shipping via cargo.
-		-Nanotrasen Naval Command"}
+	return {"Нашего военного присутствия в вашем секторе недостаточно.
+		Нам нужно, чтобы вы построили BSA-[rand(1,99)] на вашей станции.
+		Базовые части доступны для отгрузки в карго.
+		-Военное командование Нанотразен"}
 
 /datum/station_goal/bluespace_cannon/on_report()
 	//Unlock BSA parts
