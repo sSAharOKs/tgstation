@@ -50,9 +50,9 @@ SUBSYSTEM_DEF(nightshift)
 		nightshift_active = active
 		if(announce)
 			if (active)
-				announce("Good evening, crew. To reduce power consumption and stimulate the circadian rhythms of some species, all of the lights aboard the station have been dimmed for the night.")
+				announce("Добрый вечер, экипаж. Чтобы уменьшить потребление энергии и стимулировать циркадные ритмы некоторых видов, весь свет на борту станции был приглушен на ночь.")
 			else
-				announce("Good morning, crew. As it is now day time, all of the lights aboard the station have been restored to their former brightness.")
+				announce("Доброе утро, экипаж. Поскольку сейчас день, весь свет на борту станции вернулся к своей прежней яркости.")
 	for(var/obj/machinery/power/apc/APC as anything in currentrun)
 		currentrun -= APC
 
