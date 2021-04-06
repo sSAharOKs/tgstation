@@ -38,7 +38,7 @@ SUBSYSTEM_DEF(nightshift)
 			if(!emergency)
 				announce("Восстановление нормальной работы конфигурации ночного освещения.")
 			else
-				announce("Отключение ночного освещения: Станция находится в аварийном состоянии.")
+				announce("Отключение ночного освещения: Станция находится в режиме черезвычайной ситуации.")
 	if(emergency)
 		night_time = FALSE
 	if(nightshift_active != night_time)
@@ -55,7 +55,6 @@ SUBSYSTEM_DEF(nightshift)
 				announce("Доброе утро, экипаж. Поскольку сейчас день, весь свет на борту станции вернулся к своей прежней яркости.")
 	for(var/obj/machinery/power/apc/APC as anything in currentrun)
 		currentrun -= APC
-
 		if (APC.area && (APC.area.type in GLOB.the_station_areas))
 			APC.set_nightshift(active)
 		if(MC_TICK_CHECK)

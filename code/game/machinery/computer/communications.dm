@@ -359,7 +359,7 @@
 			SSjob.safe_code_request_loc = pod_location
 			SSjob.safe_code_requested = TRUE
 			SSjob.safe_code_timer_id = addtimer(CALLBACK(SSjob, /datum/controller/subsystem/job.proc/send_spare_id_safe_code, pod_location), 120 SECONDS, TIMER_UNIQUE | TIMER_STOPPABLE)
-			minor_announce("Из-за нехватки персонала ваша станция была одобрена для доставки кодов доступа для сейфа с запасной карты капитана. Доставка произойдёт через под и прибудет в [get_area(pod_location)]. Примерное время прибытия 120 секунд.")
+			minor_announce("Из-за нехватки персонала, была одобрена доставка кодов доступа для сейфа с запасной картой капитана. Под с кодами прибудет в [get_area(pod_location)] через 120 секунд.")
 
 /obj/machinery/computer/communications/ui_data(mob/user)
 	var/list/data = list(
@@ -529,9 +529,9 @@
 /**
  * Call an emergency meeting
  *
- * Comm Console wrapper for the Communications subsystem wrapper for the call_emergency_meeting world proc. 
- * Checks to make sure the proc can be called, and handles relevant feedback, logging and timing. 
- * See the SScommunications proc definition for more detail, in short, teleports the entire crew to 
+ * Comm Console wrapper for the Communications subsystem wrapper for the call_emergency_meeting world proc.
+ * Checks to make sure the proc can be called, and handles relevant feedback, logging and timing.
+ * See the SScommunications proc definition for more detail, in short, teleports the entire crew to
  * the bridge for a meetup. Should only really happen during april fools.
  * Arguments:
  * * user - Mob who called the meeting
