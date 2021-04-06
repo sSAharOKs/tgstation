@@ -82,7 +82,7 @@
 	trait_to_give = STATION_TRAIT_EMPTY_MAINT
 
 
-/datum/station_trait/overflow_job_bureacracy
+/datum/station_trait/overflow_job_bureaucracy
 	name = "Бюрократическая ошибка"
 	trait_type = STATION_TRAIT_NEGATIVE
 	weight = 5
@@ -90,15 +90,15 @@
 	var/list/jobs_to_use = list("клоунов", "барменов", "поваров", "ботаников", "карго техников", "мимов", "уборщиков", "зеков")
 	var/chosen_job
 
-/datum/station_trait/overflow_job_bureacracy/New()
+/datum/station_trait/overflow_job_bureaucracy/New()
 	. = ..()
 	chosen_job = pick(jobs_to_use)
 	RegisterSignal(SSjob, COMSIG_SUBSYSTEM_POST_INITIALIZE, .proc/set_overflow_job_override)
 
-/datum/station_trait/overflow_job_bureacracy/get_report()
+/datum/station_trait/overflow_job_bureaucracy/get_report()
 	return "Походу произошла [name]. Список вакансий на эту смену немного неправильный...Я надеюсь, вам понравится куча [chosen_job]."
 
-/datum/station_trait/overflow_job_bureacracy/proc/set_overflow_job_override(datum/source, new_overflow_role)
+/datum/station_trait/overflow_job_bureaucracy/proc/set_overflow_job_override(datum/source, new_overflow_role)
 	SIGNAL_HANDLER
 	SSjob.set_overflow_role(chosen_job)
 

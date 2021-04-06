@@ -78,8 +78,10 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 						to_chat(C, "<span class='adminobserverooc'><span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span>")
 				else
 					if(GLOB.OOC_COLOR)
+						SSredbot.send_discord_message("admin", "[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]: [msg]", "OOC")
 						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 					else
+						SSredbot.send_discord_message("admin", "[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]: [msg]", "OOC")
 						to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></span>")
 
 			else if(!(key in C.prefs.ignoring))

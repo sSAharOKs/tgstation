@@ -204,7 +204,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if(is_bwoink)
 		AddInteraction("<font color='blue'>[key_name_admin(usr)] PM'd [LinkedReplyName()]</font>")
 		message_admins("<font color='blue'>Ticket [TicketHref("#[id]")] created</font>")
-		SSredbot.send_discord_message("mentor", "Тикет #[id] создан [usr.ckey] ([usr.real_name]): [name]", "ticket")
+		SSredbot.send_discord_message("mentor", "Тикет #[id] создан [usr.ckey] ([usr.real_name]): [msg]", "ticket")
 	else
 		MessageNoRecipient(msg)
 		//send it to TGS if nobody is on and tell us how many were on
@@ -271,7 +271,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 
 	AddInteraction("<font color='red'>[LinkedReplyName(ref_src)]: [msg]</font>")
 	log_admin_private("Ticket #[id]: [key_name(initiator)]: [msg]")
-	SSredbot.send_discord_message("mentor", "Тикет #[id] создан [usr.ckey] ([usr.real_name]): [name]", "ticket")
+	SSredbot.send_discord_message("mentor", "Тикет #[id] создан [usr.ckey] ([usr.real_name]): [msg]", "ticket")
 
 	//send this msg to all admins
 	for(var/client/X in GLOB.admins)
