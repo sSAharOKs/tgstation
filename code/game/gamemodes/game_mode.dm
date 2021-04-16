@@ -325,9 +325,9 @@
 	intercepttext += generate_station_goal_report()
 	intercepttext += generate_station_trait_report()
 
-	print_command_report(intercepttext, "Сводная информация Центрального командования", announce=FALSE)
-	priority_announce("Сводка скопирована и распечатана на коммуникационных консолях.", "Вражеская связь перехвачена.Уровень безопасности повышен.", ANNOUNCER_INTERCEPT)
-	if(GLOB.security_level < SEC_LEVEL_BLUE)
+	print_command_report(intercepttext, "Central Command Status Summary", announce=FALSE)
+	priority_announce("A summary has been copied and printed to all communications consoles.", "Enemy communication intercepted. Security level elevated.", ANNOUNCER_INTERCEPT)
+	if(SSsecurity_level.current_level < SEC_LEVEL_BLUE)
 		set_security_level(SEC_LEVEL_BLUE)
 
 /*
@@ -338,7 +338,7 @@
 /datum/game_mode/proc/generate_station_goal_report()
 	if(!station_goals.len)
 		return
-	. = "<hr><b>Специальные поручения для [station_name()]:</b><BR>"
+	. = "<hr><b>Special Orders for [station_name()]:</b><BR>"
 	for(var/datum/station_goal/station_goal in station_goals)
 		station_goal.on_report()
 		. += station_goal.get_report()
@@ -352,7 +352,7 @@
 /datum/game_mode/proc/generate_station_trait_report()
 	if(!SSstation.station_traits.len)
 		return
-	. = "<hr><b>Обнаружены отклонения от нормы для смены:</b><BR>"
+	. = "<hr><b>Identified shift divergencies:</b><BR>"
 	for(var/datum/station_trait/station_trait as anything in SSstation.station_traits)
 		if(!station_trait.show_in_report)
 			continue
